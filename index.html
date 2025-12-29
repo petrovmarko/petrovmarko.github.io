@@ -14,49 +14,121 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="color-scheme" content="light dark" />
         <style>
-            *{
-                font-family: "SF Mono", "SFMono-Regular", ui-monospace,
-                 Menlo, Consolas, "Liberation Mono", monospace;
-                color: #d6d6d6;
-                text-align: justify;
-            }
-            .main-header{
-                text-align: justify;
-                width: 65ch;
-                margin: auto;
-            }
+            /* Base styling remains the same */
+* {
+    font-family: "SF Mono", "SFMono-Regular", ui-monospace,
+        Menlo, Consolas, "Liberation Mono", monospace;
+    color: #d6d6d6;
+    text-align: justify;
+    box-sizing: border-box;
+}
 
-            li{
-                list-style: none;
-            }
+.main-header {
+    text-align: justify;
+    max-width: 65ch;
+    margin: auto;
+    padding: 1rem;
+}
 
-            .card{
-                height: 200px;
-                padding: 20px;
-                transition: transform 0.25s ease, box-shadow 0.25s ease;
-                border-radius: 30px;
-            }
-            .content-card{
+li {
+    list-style: none;
+}
 
-                display: flex;
-            }
-            .card *{
-                padding: 0px;
-                margin-left: 10px;
-            }
-            .card img{
-                margin: auto;
-            }
+.card {
+    height: auto;
+    padding: 20px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 30px;
+    background-color: rgba(0,0,0,0.2); /* optional subtle card background */
+    margin-bottom: 1.5rem;
+}
 
+.content-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 
-            .card:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(88, 242, 5, 0.15);
-            }
+.card * {
+    padding: 0px;
+    margin: 0;
+}
 
-            #github{
-                height: 30px;
-            }
+.card img, .nn-icon {
+    max-width: 100%;
+    height: auto;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(88, 242, 5, 0.15);
+}
+
+#github {
+    height: 30px;
+    width: auto;
+}
+
+.github-icon, .nn-icon {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.github-icon:hover, .nn-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-header {
+        width: 90%;
+    }
+
+    .content-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card * {
+        margin-left: 0;
+    }
+
+    h1, h2, h3, p {
+        font-size: 1rem; /* scale down slightly */
+    }
+
+    #github {
+        height: 25px;
+    }
+
+    .nn-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .nn-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
         </style>
     </head>
 
