@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <noscript>
+          <style>
+            #container {
+              display: none;
+            }
+          </style>
+        </noscript>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <style>
+            *{
+                font-family: "SF Mono", "SFMono-Regular", ui-monospace,
+                 Menlo, Consolas, "Liberation Mono", monospace;
+                color: #d6d6d6;
+                text-align: justify;
+            }
+            .main-header{
+                text-align: justify;
+                width: 65ch;
+                margin: auto;
+            }
+
+            li{
+                list-style: none;
+            }
+
+            .card{
+                height: 200px;
+                padding: 20px;
+                transition: transform 0.25s ease, box-shadow 0.25s ease;
+                border-radius: 30px;
+            }
+            .content-card{
+
+                display: flex;
+            }
+            .card *{
+                padding: 0px;
+                margin-left: 10px;
+            }
+            .card img{
+                margin: auto;
+            }
+
+
+            .card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(88, 242, 5, 0.15);
+            }
+
+            #github{
+                height: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="main-header">
+            <img src="../assets/213198602.jpeg" style="height:  150px; border-radius: 30px;">
+            <h1> Marko Petrov</h1>
+            <p>Currently: Computer Science @ <a href="https://www.finki.ukim.mk/">FINKI</a></p>
+            <p>Contact: petrovmarko10119 [at] gmail [dot] com</p>
+            <p>Location: Skopje, North Macedonia</p>
+            <svg
+                            id="github"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="github-icon"
+                            >
+                            <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.14 1.18a10.9 10.9 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.59.23 2.77.11 3.06.73.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.28 5.69.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>    
+                        </svg>
+            <h2 style="color: rgb(0, 255, 0);">About Me</h2>   
+            <p>I’m a computer science student with a strong focus on data science and deep learning. I enjoy working on problems where theory meets practice — especially when models actually have to work on real, messy data.
+            I’ve spent years competing in algorithmic competitions. I’ve represented my country at numerous prestigous competitions and I’ve started to be active on Kaggle recently, where I enjoy tackling real-world DL problems under constraints.
+            Lately, I’ve been especially interested in deep learning architectures beyond standard NLP use cases — things like time series and representation learning. I also like experimenting with product ideas and getting early feedback from non-technical users before over-engineering anything.
+            I’m always curious, a bit obsessive about learning, and motivated by building things that are both technically solid and genuinely useful. My strongest areas of knowledge are data structures & algorithms, and deep learning.</p>
+        </div>   
+        
+        <div class="main-header">
+            <h2 style="color: rgb(0, 255, 0);">Projects</h2> 
+
+                <div class="card">
+                        <div class="content-card">
+                            <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#d6d6d6"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="nn-icon"
+                            >
+                            <!-- nodes -->
+                            <circle cx="5" cy="12" r="2"/>
+                            <circle cx="12" cy="5" r="2"/>
+                            <circle cx="12" cy="12" r="2"/>
+                            <circle cx="12" cy="19" r="2"/>
+                            <circle cx="19" cy="12" r="2"/>
+
+                            <!-- connections -->
+                            <line x1="7" y1="12" x2="10" y2="6"/>
+                            <line x1="7" y1="12" x2="10" y2="12"/>
+                            <line x1="7" y1="12" x2="10" y2="18"/>
+
+                            <line x1="14" y1="6" x2="17" y2="12"/>
+                            <line x1="14" y1="12" x2="17" y2="12"/>
+                            <line x1="14" y1="18" x2="17" y2="12"/>
+                            </svg>
+
+                        <div class="text">
+                                <h3>MarkGrad - A small neural network engine</h3>
+                                <p>MarkGrad is a small automatic differentiation engine that was created by me from the ground up to comprehend the inner workings of neural nets.
+                            </div>
+                        </div>
+                        <a href="https://github.com/petrovmarko/MarkGrad">
+                        <svg
+                            id="github"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            class="github-icon"
+                            >
+                            <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.14 1.18a10.9 10.9 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.59.23 2.77.11 3.06.73.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.28 5.69.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>    
+                        </svg>
+                    </a>
+                    </div>
+
+
+        </div>
+        <div class="main-header">
+            <h2 style="color: rgb(0, 255, 0);">Honors</h2> 
+            <ul>
+                <li>35th International Olympiad in Informatics (Honorable Mention)</li>
+                <li>Balkan Olympiad in Informatics</li>
+                <li>27th Macedonian Olympiad in Informatics (Absolute 2nd place - Silver Medal)</li>
+                <li>Full Scholarship at the Faculty of Computer Science & Engineering</li>
+            </ul>
+        </div>
+        <div class="main-header">
+            <h2 style="color: rgb(0, 255, 0);">Education</h2>
+        </div>
+</body>
+</html>
