@@ -419,10 +419,7 @@
         localStorage.setItem("theme", theme);
     }
 
-    const saved = localStorage.getItem("theme");
-    if (saved) {
-        setTheme(saved);
-    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
         setTheme("light");
     }else{
         setTheme("dark")
