@@ -424,6 +424,8 @@
         setTheme(saved);
     } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
         setTheme("light");
+    }else{
+        setTheme("dark")
     }
 
     toggle.addEventListener("click", () => {
