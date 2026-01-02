@@ -26,6 +26,7 @@
             --muted: #b5b5b5;
             --border: #d6d6d6;
             --highlight: #ffe066;
+            --selfie: url("./assets/dark.jpeg");
         }
 
         [data-theme="light"] {
@@ -36,6 +37,7 @@
             --muted: #555;
             --border: #ccc;
             --highlight: #fff2a8;
+            --selfie: url("./assets/light.jpg");
         }
 
         * {
@@ -228,6 +230,16 @@
             transform: scaleX(1);
         }
         
+        #selfie{
+            content: var(--selfie);
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+
+        }
+
+        #selfie.flip {
+            transform: rotateY(180deg);
+        }
     </style>
 </head>
 
@@ -236,7 +248,7 @@
 <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
 
 <div class="main-header">
-        <img src="./assets/213198602.jpeg" style="height:150px; border-radius:30px;">
+        <img id = "selfie" style="height:160px; width: 150px; border-radius:30px;">
 
         <h1 data-type> Marko Petrov</h1>
 
@@ -408,21 +420,42 @@
     const toggle = document.getElementById("theme-toggle");
     const root = document.documentElement;
 
-    function setTheme(theme) {
-        if (theme === "light") {
-            root.setAttribute("data-theme", "light");
-            toggle.textContent = "🌞";
-        } else {
-            root.removeAttribute("data-theme");
-            toggle.textContent = "🌙";
+    function setTheme(theme, skip) {
+        const root = document.documentElement;
+        if (skip){
+            if (theme === "light") {
+                root.setAttribute("data-theme", "light");
+                toggle.textContent = "🌞";
+            } else {
+                root.removeAttribute("data-theme");
+                toggle.textContent = "🌙";
+            } 
+            return;
         }
-        localStorage.setItem("theme", theme);
+        const selfie = document.getElementById("selfie");
+
+        selfie.classList.add("flip");
+        setTimeout(() => {
+            // switch theme halfway through flip
+            if (theme === "light") {
+                root.setAttribute("data-theme", "light");
+                toggle.textContent = "🌞";
+            } else {
+                root.removeAttribute("data-theme");
+                toggle.textContent = "🌙";
+            } 
+        }, 200);
+
+        setTimeout(() => {
+            selfie.classList.remove("flip");
+        }, 600);
+
     }
 
     if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-        setTheme("light");
+        setTheme("light", true);
     }else{
-        setTheme("dark")
+        setTheme("dark", true)
     }
 
     toggle.addEventListener("click", () => {
