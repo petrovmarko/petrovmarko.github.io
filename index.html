@@ -451,18 +451,23 @@
         
         localStorage.setItem("theme", theme);
     }
-
-    if (!localStorage.getItem("theme")){
-        if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-            setTheme("light", true);
-        }else{
-            setTheme("dark", true)
-        }
+    let sys = "light";
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+        sys = "light"
     }else{
-        setTheme(localStorage.getItem("theme"), true);
+        sys = "dark"
     }
+    console.log(sys, localStorage.getItem("system_theme"));
+
+    if (localStorage.getItem("system_theme") != sys){
+        localStorage.setItem("system_theme", sys)
+        localStorage.setItem("theme", sys);
+    }
+    
+    setTheme(localStorage.getItem("theme"), true);
+    
     toggle.addEventListener("click", () => {
-        setTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light");
+        setTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light", false);
     });
 </script>
 
