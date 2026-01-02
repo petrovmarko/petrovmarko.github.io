@@ -33,7 +33,7 @@
             --bg: #f7f7f7;
             --text: #1a1a1a;
             --card-bg: rgba(0, 0, 0, 0.05);
-            --accent: #0a7a0a;
+            --accent: #059abc;
             --muted: #555;
             --border: #ccc;
             --highlight: #fff2a8;
@@ -392,7 +392,6 @@
 <script>
     const speed = 25;
     const elements = Array.from(document.querySelectorAll("[data-type]"));
-
     async function typeElement(el) {
         const text = el.textContent;
         el.textContent = "";
@@ -444,20 +443,24 @@
                 root.removeAttribute("data-theme");
                 toggle.textContent = "🌙";
             } 
-        }, 200);
+        }, 300);
 
         setTimeout(() => {
             selfie.classList.remove("flip");
         }, 600);
-
+        
+        localStorage.setItem("theme", theme);
     }
 
-    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-        setTheme("light", true);
+    if (!localStorage.getItem("theme")){
+        if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+            setTheme("light", true);
+        }else{
+            setTheme("dark", true)
+        }
     }else{
-        setTheme("dark", true)
+        setTheme(localStorage.getItem("theme"), true);
     }
-
     toggle.addEventListener("click", () => {
         setTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light");
     });
