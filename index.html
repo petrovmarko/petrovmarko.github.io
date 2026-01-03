@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Marko Petrov</title>
-    <link rel="icon" href="./assets/213198602.jpeg"> 
+    <link rel="icon" href="./assets/213198602.jpeg">
 
     <noscript>
         <style>
@@ -16,295 +16,62 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-
-    <style>
-        :root {
-            --bg: #0e0e0e;
-            --text: #d6d6d6;
-            --card-bg: rgba(0, 0, 0, 0.2);
-            --accent: rgb(0, 162, 255);
-            --muted: #b5b5b5;
-            --border: #d6d6d6;
-            --highlight: #ffe066;
-            --selfie: url("./assets/dark.jpeg");
-        }
-
-        [data-theme="light"] {
-            --bg: #f7f7f7;
-            --text: #1a1a1a;
-            --card-bg: rgba(0, 0, 0, 0.05);
-            --accent: #059abc;
-            --muted: #555;
-            --border: #ccc;
-            --highlight: #fff2a8;
-            --selfie: url("./assets/light.jpg");
-        }
-
-        * {
-            font-family:Palatino, 'Palatino Linotype', Georgia, Times, 'Times New Roman', serif;
-            color: var(--text);
-            text-align: justify;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: var(--bg);
-            margin: 0;
-        }
-
-        .main-header {
-            text-align: justify;
-            max-width: 65ch;
-            margin: auto;
-            padding: 1rem;
-        }
-
-        .card {
-            height: auto;
-            padding: 20px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            border-radius: 30px;
-            background-color: var(--card-bg);
-            margin-bottom: 1.5rem;
-        }
-
-        .content-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .card * {
-            padding: 0;
-            margin: 0;
-        }
-
-        .card img,
-        .nn-icon {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .card:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(88, 242, 5, 0.15);
-        }
-
-        #github {
-            height: 30px;
-            width: auto;
-        }
-
-        .github-icon,
-        .nn-icon {
-            transition: transform 0.2s ease, color 0.2s ease;
-            text-decoration: none;
-        }
-
-        .github-icon:hover,
-        .nn-icon:hover {
-            transform: scale(1.1);
-        }
-
-        h2 {
-            color: var(--accent);
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            text-align: center;
-            padding: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .main-header {
-                width: 90%;
-            }
-
-            .content-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            h1,
-            h2,
-            h3,
-            p {
-                font-size: 1rem;
-            }
-
-            #github {
-                height: 25px;
-            }
-
-            .nn-icon {
-                width: 60px;
-                height: 60px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 1.5rem; }
-            h2 { font-size: 1.25rem; }
-            h3 { font-size: 1rem; }
-            p { font-size: 0.9rem; }
-            .nn-icon { width: 50px; height: 50px; }
-        }
-        [data-type] {
-            visibility: hidden;
-        }
-
-        .cool-emoji {
-            display: inline-block;
-            font-size: 7.8rem;
-            animation: float 2.5s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1em;
-            background: currentColor;
-            margin-left: 2px;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            50.01%, 100% { opacity: 0; }
-        }
-
-        #theme-toggle {
-            position: fixed;
-            top: 16px;
-            right: 16px;
-            background: transparent;
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            padding: 6px 10px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        body {
-            line-height: 1.6;
-        }
-
-        p,
-        li {
-            line-height: 1.7;
-        }
-
-        h1,
-        h2,
-        h3 {
-            line-height: 1.25;
-        }
-
-        .lr-highlight {
-            position: relative;
-            display: inline-block;
-            z-index: 0;
-        }
-
-        .lr-highlight::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0.15em;
-            width: 100%;
-            height: 0.9em;
-            background: var(--highlight);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.45s ease;
-            z-index: -1;
-        }
-
-        .lr-highlight:hover::before {
-            transform: scaleX(1);
-        }
-        
-        #selfie{
-            content: var(--selfie);
-            transition: transform 0.6s ease;
-            transform-style: preserve-3d;
-
-        }
-
-        #selfie.flip {
-            transform: rotateY(180deg);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    
+   
+    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
 
-<button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-
-<div class="main-header">
-        <img id = "selfie" style="height:160px; width: 150px; border-radius:30px;">
-
+    <div class="main-header" id="first-main">
+        <img id="selfie" style="height:200px; width: 200px; border-radius:100px; margin-top: 20px; margin-right: 20px;">
+        <div>
         <h1 data-type> Marko Petrov</h1>
 
         <p data-type>Currently: Computer Science @ <a href="https://www.finki.ukim.mk/">FINKI</a></p>
         <p data-type>Contact: petrovmarko10119 [at] gmail [dot] com</p>
         <p data-type>Location: Skopje, North Macedonia</p>
-        <p data-type>Age: 19</p>
 
         <svg id="github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="github-icon">
-            <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.14 1.18a10.9 10.9 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.59.23 2.77.11 3.06.73.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.28 5.69.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+            <path
+                d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.14 1.18a10.9 10.9 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.59.23 2.77.11 3.06.73.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.28 5.69.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
         </svg>
         <a href="https://www.kaggle.com/YOUR_USERNAME" target="_blank" aria-label="Kaggle" class="github-icon">
-            <svg
-                class="github-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                width="30"
-                height="30"
-            >
-                <path d="M7.5 3a1.5 1.5 0 0 1 3 0v7.09l4.97-5.28a1.5 1.5 0 1 1 2.18 2.04L12.9 12l4.75 5.15a1.5 1.5 0 1 1-2.18 2.04L10.5 13.9V21a1.5 1.5 0 0 1-3 0V3z"/>
+            <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                width="30" height="30">
+                <path
+                    d="M7.5 3a1.5 1.5 0 0 1 3 0v7.09l4.97-5.28a1.5 1.5 0 1 1 2.18 2.04L12.9 12l4.75 5.15a1.5 1.5 0 1 1-2.18 2.04L10.5 13.9V21a1.5 1.5 0 0 1-3 0V3z" />
             </svg>
         </a>
-        <a href="https://ioinformatics.org/" target="_blank" aria-label="International Olympiad in Informatics" class="github-icon">
-            <svg
-                class="github-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 64 64"
-                width="30"
-                height="30"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-            >
-                <circle cx="32" cy="32" r="28"/>
-                <text
-                    x="32"
-                    y="38"
-                    text-anchor="middle"
-                    font-size="22"
-                    font-family="ui-monospace, SFMono-Regular, monospace"
-                    fill="currentColor"
-                    stroke="none"
-                >
+        <a href="https://ioinformatics.org/" target="_blank" aria-label="International Olympiad in Informatics"
+            class="github-icon">
+            <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="30" height="30"
+                fill="none" stroke="currentColor" stroke-width="3">
+                <circle cx="32" cy="32" r="28" />
+                <text x="32" y="38" text-anchor="middle" font-size="22"
+                    font-family="ui-monospace, SFMono-Regular, monospace" fill="currentColor" stroke="none">
                     IOI
                 </text>
             </svg>
         </a>
-
-
-        <h2 style="color: var(--accent);"><span style="color: var(--accent);" class="lr-highlight" >About Me</span></h2>
-        <p>I’m a computer science student with a strong interest in algorithms, machine learning, and optimization. I approach problems from first principles, aiming to understand the underlying assumptions and mechanisms behind methods rather than treating them as black boxes.
-            I enjoy working at the boundary between theory and practice: translating mathematical ideas into efficient implementations, stress-testing algorithms, and exploring where classical approaches fail or can be improved. My experience spans research, competitive programming, and applied projects, which has shaped a habit of thinking rigorously while building things that actually work.
-            I’m particularly drawn to problems that are hard, structural, or poorly understood, whether in optimization, learning systems, or real-world data, and I value clarity, simplicity, and depth over trend-driven solutions.</p>
     </div>
 
+    </div>
+
+    <div class="main-header">
+        <h2 style="color: var(--accent);"><span style="color: var(--accent);" class="lr-highlight">About Me</span></h2>
+        <p>I’m a computer science student with a strong interest in algorithms, machine learning, and optimization. I
+            approach problems from first principles, aiming to understand the underlying assumptions and mechanisms
+            behind methods rather than treating them as black boxes.
+            I enjoy working at the boundary between theory and practice: translating mathematical ideas into efficient
+            implementations, stress-testing algorithms, and exploring where classical approaches fail or can be
+            improved. My experience spans research, competitive programming, and applied projects, which has shaped a
+            habit of thinking rigorously while building things that actually work.
+            I’m particularly drawn to problems that are hard, structural, or poorly understood, whether in optimization,
+            learning systems, or real-world data, and I value clarity, simplicity, and depth over trend-driven
+            solutions.</p>
+    </div>
     <div class="main-header">
         <h2 style="color: var(--accent);" class="lr-highlight">Projects</h2>
 
@@ -326,10 +93,11 @@
                 </svg>
                 <div class="text">
                     <h3>MarkGrad - A small neural network engine</h3>
-                    <p>MarkGrad is a small automatic differentiation engine that was created by me from the ground up to comprehend the inner workings of neural nets.</p>
+                    <p>MarkGrad is a small automatic differentiation engine that was created by me from the ground up to
+                        comprehend the inner workings of neural nets.</p>
                 </div>
             </div>
-            <a href="https://github.com/petrovmarko/MarkGrad">
+            <a href="https://github.com/petrovmarko/MarkGrad" style="display: flex; justify-content: center; padding: 5px;">
                 <svg id="github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                     class="github-icon">
                     <path
@@ -343,10 +111,11 @@
                 <span class="cool-emoji">😎</span>
                 <div class="text">
                     <h3>Bace - a prank language model for meme generation.</h3>
-                    <p>Bace is a transformer model implemented from scratch in PyTorch and trained on a meme dataset.</p>
+                    <p>Bace is a transformer model implemented from scratch in PyTorch and trained on a meme dataset.
+                    </p>
                 </div>
             </div>
-            <a href="https://github.com/petrovmarko/MarkGrad">
+            <a href="https://github.com/petrovmarko/MarkGrad" style="display: flex; justify-content: center;">
                 <svg id="github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                     class="github-icon">
                     <path
@@ -373,8 +142,27 @@
                 <b>Faculty of Computer Science & Engineering - Skopje</b>
                 <p style="color: #b5b5b5;">B.S. in Computer Science GPA: 9.60 / 10.00 </p>
                 <p style="color: #b5b5b5">2024 - expected 2028</p>
-                <p><b>Courses Taken:</b> Structured Programming, Object-Oriented Programming, Discrete Math I, Discrete Math II, Calculus I, Calculus II, Linear Algebra, Probability & Statistics, Introduction to Web Design, Client-Side Programming</p>
+                <p><b>Courses Taken:</b> Structured Programming, Object-Oriented Programming, Discrete Math I, Discrete
+                    Math II, Calculus I, Calculus II, Linear Algebra, Probability & Statistics, Introduction to Web
+                    Design, Client-Side Programming</p>
             </li>
+            <!-- 
+            <li>
+                <b>Yahya Kemal College Skopje</b>
+                <p style="color: #b5b5b5;">High School Diploma GPA: 5.00/5.00 </p>
+                <p style="color: #b5b5b5">2022-2024</p>
+                <p><b>Activities:</b> Olympiads / Competitive Programming </p>
+
+                <p><b>Teaching Experience:</b> In my senior year, I held competitive programming lessons to a small group of students and helped them prepare for the upcomming national contests.</p>
+            </li>
+            <li>
+                <b>Nova International Schools</b>
+                <p style="color: #b5b5b5;">IB Middle Years Programme GPA: 11.9/12 (equivalent to 5.00/5.00) </p>
+                <p style="color: #b5b5b5">2020-2022</p>
+                <p><b>Activities:</b> Math Club / Robotics Club </p>
+                <p><b>Relevant Courses Taken:</b> AP Calculus AB, AP Computer Science A</p>
+            </li>
+        -->
         </ul>
     </div>
 
@@ -385,91 +173,13 @@
         <p><b>Libraries: </b> PyTorch, TensorFlow, Scikit-Learn, NumPy, Pandas, Polars, Matplotlib</p>
         <p><b>Tools: </b> Git, Jupyter</p>
     </div>
-<footer>
-    © 2025 Marko Petrov • All rights reserved
-</footer>
+    <footer id="footer">
+        <p>© 2025 Marko Petrov • All rights reserved</p>
+    </footer>
 
-<script>
-    const speed = 25;
-    const elements = Array.from(document.querySelectorAll("[data-type]"));
-    async function typeElement(el) {
-        const text = el.textContent;
-        el.textContent = "";
-        el.style.visibility = "visible";
-        const cursor = document.createElement("span");
-        cursor.className = "cursor";
-        el.appendChild(cursor);
-
-        for (let char of text) {
-            cursor.insertAdjacentText("beforebegin", char);
-            await new Promise(r => setTimeout(r, speed));
-        }
-
-        cursor.remove();
-    }
-
-    async function startTyping() {
-        for (let el of elements) {
-            await typeElement(el);
-        }
-    }
-
-    window.addEventListener("load", startTyping);
-
-    const toggle = document.getElementById("theme-toggle");
-    const root = document.documentElement;
-
-    function setTheme(theme, skip) {
-        const root = document.documentElement;
-        if (skip){
-            if (theme === "light") {
-                root.setAttribute("data-theme", "light");
-                toggle.textContent = "🌞";
-            } else {
-                root.removeAttribute("data-theme");
-                toggle.textContent = "🌙";
-            } 
-            return;
-        }
-        const selfie = document.getElementById("selfie");
-
-        selfie.classList.add("flip");
-        setTimeout(() => {
-            // switch theme halfway through flip
-            if (theme === "light") {
-                root.setAttribute("data-theme", "light");
-                toggle.textContent = "🌞";
-            } else {
-                root.removeAttribute("data-theme");
-                toggle.textContent = "🌙";
-            } 
-        }, 300);
-
-        setTimeout(() => {
-            selfie.classList.remove("flip");
-        }, 600);
-        
-        localStorage.setItem("theme", theme);
-    }
-    let sys = "light";
-    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-        sys = "light"
-    }else{
-        sys = "dark"
-    }
-    console.log(sys, localStorage.getItem("system_theme"));
-
-    if (localStorage.getItem("system_theme") != sys){
-        localStorage.setItem("system_theme", sys)
-        localStorage.setItem("theme", sys);
-    }
-    
-    setTheme(localStorage.getItem("theme"), true);
-    
-    toggle.addEventListener("click", () => {
-        setTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light", false);
-    });
-</script>
 
 </body>
+
+<script src="script.js"></script>
+
 </html>
