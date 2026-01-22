@@ -1,185 +1,215 @@
 <!DOCTYPE html>
 <html data-theme="light">
-
 <head>
     <meta charset="utf-8" />
     <title>Marko Petrov</title>
     <link rel="icon" href="./assets/213198602.jpeg">
-
-    <noscript>
-        <style>
-            #container {
-                display: none;
-            }
-        </style>
-    </noscript>
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Marko Petrov - portfolio, blog, and resume." />
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    
-   
-    <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <button id="theme-toggle" aria-label="Toggle theme">Dark</button>
 
-    <div class="main-header" id="first-main">
-        <img id="selfie" style="height:200px; width: 200px; border-radius:100px; margin-top: 20px; margin-right: 20px;">
-        <div>
-        <h1 data-type> Marko Petrov</h1>
-
-        <p data-type>Currently: Computer Science @ <a href="https://www.finki.ukim.mk/">FINKI</a></p>
-        <p data-type>Contact: petrovmarko10119 [at] gmail [dot] com</p>
-        <p data-type>Location: Skopje, North Macedonia</p>
-
-        <svg id="github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="github-icon">
-            <path
-                d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.14 1.18a10.9 10.9 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.59.23 2.77.11 3.06.73.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.28 5.69.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
-        </svg>
-        <a href="https://www.kaggle.com/YOUR_USERNAME" target="_blank" aria-label="Kaggle" class="github-icon">
-            <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                width="30" height="30">
-                <path
-                    d="M7.5 3a1.5 1.5 0 0 1 3 0v7.09l4.97-5.28a1.5 1.5 0 1 1 2.18 2.04L12.9 12l4.75 5.15a1.5 1.5 0 1 1-2.18 2.04L10.5 13.9V21a1.5 1.5 0 0 1-3 0V3z" />
-            </svg>
-        </a>
-        <a href="https://ioinformatics.org/" target="_blank" aria-label="International Olympiad in Informatics"
-            class="github-icon">
-            <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="30" height="30"
-                fill="none" stroke="currentColor" stroke-width="3">
-                <circle cx="32" cy="32" r="28" />
-                <text x="32" y="38" text-anchor="middle" font-size="22"
-                    font-family="ui-monospace, SFMono-Regular, monospace" fill="currentColor" stroke="none">
-                    IOI
-                </text>
-            </svg>
-        </a>
-    </div>
-
-    </div>
-
-    <div class="main-header">
-        <h2 style="color: var(--accent);"><span style="color: var(--accent);" class="lr-highlight">About Me</span></h2>
-        <p>I’m a computer science student with a strong interest in algorithms, machine learning, and optimization. I
-            approach problems from first principles, aiming to understand the underlying assumptions and mechanisms
-            behind methods rather than treating them as black boxes.
-            I enjoy working at the boundary between theory and practice: translating mathematical ideas into efficient
-            implementations, stress-testing algorithms, and exploring where classical approaches fail or can be
-            improved. My experience spans research, competitive programming, and applied projects, which has shaped a
-            habit of thinking rigorously while building things that actually work.
-            I’m particularly drawn to problems that are hard, structural, or poorly understood, whether in optimization,
-            learning systems, or real-world data, and I value clarity, simplicity, and depth over trend-driven
-            solutions.</p>
-    </div>
-    <div class="main-header">
-        <h2 style="color: var(--accent);" class="lr-highlight">Projects</h2>
-
-        <div class="card">
-            <div class="content-card">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#d6d6d6"
-                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="nn-icon">
-                    <circle cx="5" cy="12" r="2" />
-                    <circle cx="12" cy="5" r="2" />
-                    <circle cx="12" cy="12" r="2" />
-                    <circle cx="12" cy="19" r="2" />
-                    <circle cx="19" cy="12" r="2" />
-                    <line x1="7" y1="12" x2="10" y2="6" />
-                    <line x1="7" y1="12" x2="10" y2="12" />
-                    <line x1="7" y1="12" x2="10" y2="18" />
-                    <line x1="14" y1="6" x2="17" y2="12" />
-                    <line x1="14" y1="12" x2="17" y2="12" />
-                    <line x1="14" y1="18" x2="17" y2="12" />
-                </svg>
-                <div class="text">
-                    <h3>MarkGrad - A small neural network engine</h3>
-                    <p>MarkGrad is a small automatic differentiation engine that was created by me from the ground up to
-                        comprehend the inner workings of neural nets.</p>
+    <div class="page">
+        <header class="site-header">
+            <div class="brand">
+                <img id="selfie" class="portrait" src="./assets/light.jpg" data-light="./assets/light.jpg"
+                    data-dark="./assets/dark.jpeg" alt="Portrait of Marko Petrov">
+                <div class="brand-text">
+                    <p class="eyebrow">Marko Petrov</p>
+                    <h1>Building curious systems in algorithms, learning, and optimization.</h1>
+                    <p class="lede">
+                        I study computer science at FINKI and I like turning theoretical ideas into
+                        reliable, efficient code. I care about clarity, depth, and why things work.
+                    </p>
+                    <div class="meta">
+                        <span>Skopje, North Macedonia</span>
+                        <span>petrovmarko10119 [at] gmail [dot] com</span>
+                        <span>Open to research + builder collaborations</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://github.com/petrovmarko" aria-label="GitHub">GitHub</a>
+                        <a href="https://www.kaggle.com/YOUR_USERNAME" aria-label="Kaggle">Kaggle</a>
+                        <a href="https://ioinformatics.org/" aria-label="IOI">IOI</a>
+                    </div>
                 </div>
             </div>
-            <a href="https://github.com/petrovmarko/MarkGrad" style="display: flex; justify-content: center; padding: 5px;">
-                <svg id="github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                    class="github-icon">
-                    <path
-                        d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.14 1.18a10.9 10.9 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.59.23 2.77.11 3.06.73.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.28 5.69.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
-                </svg>
-            </a>
-        </div>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#resume">Resume</a>
+                <a href="#projects">Projects</a>
+                <a href="#blog">Blog</a>
+                <a href="projects.html">All Projects</a>
+                <a href="blog.html">All Posts</a>
+                <a href="#honors">Honors</a>
+                <a href="#skills">Skills</a>
+            </nav>
+        </header>
 
-        <div class="card">
-            <div class="content-card">
-                <span class="cool-emoji">😎</span>
-                <div class="text">
-                    <h3>Bace - a prank language model for meme generation.</h3>
-                    <p>Bace is a transformer model implemented from scratch in PyTorch and trained on a meme dataset.
+        <section id="about" class="section" style="--delay: 0.05s;">
+            <h2>About</h2>
+            <div class="section-grid">
+                <div>
+                    <p>
+                        I approach problems from first principles, aiming to understand the assumptions
+                        behind methods rather than treating them as black boxes. I enjoy working at the
+                        boundary between theory and practice: translating mathematical ideas into
+                        efficient implementations, stress-testing algorithms, and exploring where
+                        classical approaches fail or can be improved.
+                    </p>
+                    <p>
+                        My experience spans research, competitive programming, and applied projects.
+                        I am drawn to problems that are hard, structural, or poorly understood in
+                        optimization, learning systems, or real-world data.
                     </p>
                 </div>
+                <div class="about-card">
+                    <h3>Resume Snapshot</h3>
+                    <ul class="resume-list">
+                        <li><span>Now</span> Computer Science @ FINKI</li>
+                        <li><span>Focus</span> Algorithms, ML systems, optimization</li>
+                        <li><span>Interests</span> Auto-diff, transformers, statistical learning</li>
+                        <li><span>Contact</span> petrovmarko10119 [at] gmail [dot] com</li>
+                    </ul>
+                    <a class="button" href="mailto:petrovmarko10119@gmail.com">Request full resume</a>
+                </div>
             </div>
-            <a href="https://github.com/petrovmarko/MarkGrad" style="display: flex; justify-content: center;">
-                <svg id="github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                    class="github-icon">
-                    <path
-                        d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.92.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.14 1.18a10.9 10.9 0 0 1 5.72 0c2.18-1.49 3.14-1.18 3.14-1.18.62 1.59.23 2.77.11 3.06.73.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.41-5.28 5.69.41.35.78 1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
-                </svg>
-            </a>
-        </div>
+        </section>
+
+        <section id="resume" class="section" style="--delay: 0.12s;">
+            <h2>Resume</h2>
+            <div class="resume-columns">
+                <div>
+                    <h3>Experience</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <p class="timeline-role">Independent Researcher</p>
+                            <p class="timeline-meta">2024 - Present - Skopje</p>
+                            <p>Exploring optimization-driven training loops and robustness in small language models.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="timeline-role">Competitive Programming Mentor</p>
+                            <p class="timeline-meta">2023 - 2024 - Skopje</p>
+                            <p>Prepared students for national contests; focused on graph theory and DP.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Education</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <p class="timeline-role">Faculty of Computer Science &amp; Engineering</p>
+                            <p class="timeline-meta">B.S. Computer Science - 2024 - 2028</p>
+                            <p>GPA 9.60 / 10.00 - Courses: Discrete Math, Algorithms, Linear Algebra.</p>
+                        </div>
+                    </div>
+                    <h3>Download</h3>
+                    <p class="muted">
+                        I keep my full resume updated on request with references and project details.
+                    </p>
+                    <a class="button ghost" href="mailto:petrovmarko10119@gmail.com">Email for resume PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section" style="--delay: 0.18s;">
+            <h2>Projects</h2>
+            <div class="cards">
+                <article class="card">
+                    <div>
+                        <p class="card-eyebrow">Neural Networks</p>
+                        <h3>MarkGrad - a small autograd engine</h3>
+                        <p>
+                            A compact automatic differentiation engine built to understand neural
+                            nets from the ground up, with a focus on clarity and inspectable graphs.
+                        </p>
+                    </div>
+                    <a href="https://github.com/petrovmarko/MarkGrad" class="card-link">View on GitHub</a>
+                </article>
+                <article class="card">
+                    <div>
+                        <p class="card-eyebrow">LLMs</p>
+                        <h3>Bace - a meme generation transformer</h3>
+                        <p>
+                            A transformer model implemented from scratch in PyTorch, trained on a
+                            custom meme dataset for playful text synthesis.
+                        </p>
+                    </div>
+                    <a href="https://github.com/petrovmarko/MarkGrad" class="card-link">Read the write-up</a>
+                </article>
+            </div>
+            <a class="button ghost" href="projects.html">View all projects</a>
+        </section>
+
+        <section id="blog" class="section" style="--delay: 0.24s;">
+            <h2>Blog</h2>
+            <div class="post-list">
+                <article class="post-item">
+                    <p class="post-meta">Jan 2025 - Algorithms</p>
+                    <h3><a href="#">Revisiting shortest paths with constraints</a></h3>
+                    <p>Notes from building a constraint-aware Dijkstra variant and when it breaks.</p>
+                </article>
+                <article class="post-item">
+                    <p class="post-meta">Dec 2024 - ML Systems</p>
+                    <h3><a href="#">What I learned implementing autograd</a></h3>
+                    <p>Tradeoffs in graph retention, memory, and debugging numerical issues.</p>
+                </article>
+                <article class="post-item">
+                    <p class="post-meta">Oct 2024 - Optimization</p>
+                    <h3><a href="#">Gradient noise as a feature</a></h3>
+                    <p>Why stochasticity in training can act like an implicit regularizer.</p>
+                </article>
+            </div>
+            <a class="button ghost" href="blog.html">View all posts</a>
+        </section>
+
+        <section id="honors" class="section" style="--delay: 0.3s;">
+            <h2>Honors</h2>
+            <div class="widget-grid">
+                <div class="widget">
+                    <p class="widget-title">IOI 2023</p>
+                    <p>35th International Olympiad in Informatics - Honorable Mention.</p>
+                </div>
+                <div class="widget">
+                    <p class="widget-title">BOI</p>
+                    <p>Balkan Olympiad in Informatics - National Team selection.</p>
+                </div>
+                <div class="widget">
+                    <p class="widget-title">MOI 2024</p>
+                    <p>27th Macedonian Olympiad in Informatics - Silver Medal.</p>
+                </div>
+                <div class="widget">
+                    <p class="widget-title">FINKI</p>
+                    <p>Full scholarship at the Faculty of Computer Science &amp; Engineering.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section" style="--delay: 0.36s;">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <p class="skill-title">Languages</p>
+                    <p>Python, C/C++, Java, JavaScript, LaTeX, HTML/CSS</p>
+                </div>
+                <div>
+                    <p class="skill-title">Libraries</p>
+                    <p>PyTorch, TensorFlow, Scikit-Learn, NumPy, Pandas, Polars, Matplotlib</p>
+                </div>
+                <div>
+                    <p class="skill-title">Tools</p>
+                    <p>Git, Jupyter, VS Code, Linux</p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="main-header">
-        <h2 style="color: var(--accent);" class="lr-highlight">Honors</h2>
-        <ul>
-            <li>35th International Olympiad in Informatics (Honorable Mention)</li>
-            <li>Balkan Olympiad in Informatics</li>
-            <li>27th Macedonian Olympiad in Informatics (Absolute 2nd place - Silver Medal)</li>
-            <li>Full Scholarship at the Faculty of Computer Science & Engineering</li>
-        </ul>
-    </div>
-
-    <div class="main-header">
-        <h2 style="color: var(--accent);" class="lr-highlight">Education</h2>
-        <ul>
-            <li>
-                <b>Faculty of Computer Science & Engineering - Skopje</b>
-                <p style="color: #b5b5b5;">B.S. in Computer Science GPA: 9.60 / 10.00 </p>
-                <p style="color: #b5b5b5">2024 - expected 2028</p>
-                <p><b>Courses Taken:</b> Structured Programming, Object-Oriented Programming, Discrete Math I, Discrete
-                    Math II, Calculus I, Calculus II, Linear Algebra, Probability & Statistics, Introduction to Web
-                    Design, Client-Side Programming</p>
-            </li>
-            <!-- 
-            <li>
-                <b>Yahya Kemal College Skopje</b>
-                <p style="color: #b5b5b5;">High School Diploma GPA: 5.00/5.00 </p>
-                <p style="color: #b5b5b5">2022-2024</p>
-                <p><b>Activities:</b> Olympiads / Competitive Programming </p>
-
-                <p><b>Teaching Experience:</b> In my senior year, I held competitive programming lessons to a small group of students and helped them prepare for the upcomming national contests.</p>
-            </li>
-            <li>
-                <b>Nova International Schools</b>
-                <p style="color: #b5b5b5;">IB Middle Years Programme GPA: 11.9/12 (equivalent to 5.00/5.00) </p>
-                <p style="color: #b5b5b5">2020-2022</p>
-                <p><b>Activities:</b> Math Club / Robotics Club </p>
-                <p><b>Relevant Courses Taken:</b> AP Calculus AB, AP Computer Science A</p>
-            </li>
-        -->
-        </ul>
-    </div>
-
-
-    <div class="main-header">
-        <h2 style="color: var(--accent);" class="lr-highlight">Technical Skills</h2>
-        <p><b>Languages: </b> Python, C/C++, Java, JavaScript, LaTeX, HTML/CSS</p>
-        <p><b>Libraries: </b> PyTorch, TensorFlow, Scikit-Learn, NumPy, Pandas, Polars, Matplotlib</p>
-        <p><b>Tools: </b> Git, Jupyter</p>
-    </div>
     <footer id="footer">
-        <p>© 2025 Marko Petrov • All rights reserved</p>
+        <p>Copyright 2025 Marko Petrov - All rights reserved</p>
     </footer>
 
-
+    <script src="script.js"></script>
 </body>
-
-<script src="script.js"></script>
-
 </html>

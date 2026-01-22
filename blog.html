@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <title>Blog - Marko Petrov</title>
+    <link rel="icon" href="./assets/213198602.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Blog posts by Marko Petrov." />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle theme">Dark</button>
+
+    <div class="page">
+        <header class="page-header">
+            <a class="back-link" href="index.html">Back to home</a>
+            <h1>All Blog Posts</h1>
+            <p>
+                Writing about algorithms, ML systems, and the details I notice while building.
+            </p>
+        </header>
+
+        <section class="section" style="--delay: 0.05s;">
+            <div class="post-list">
+                <article class="post-item">
+                    <p class="post-meta">Jan 2025 - Algorithms</p>
+                    <h3><a href="#">Revisiting shortest paths with constraints</a></h3>
+                    <p>Notes from building a constraint-aware Dijkstra variant and when it breaks.</p>
+                </article>
+                <article class="post-item">
+                    <p class="post-meta">Dec 2024 - ML Systems</p>
+                    <h3><a href="#">What I learned implementing autograd</a></h3>
+                    <p>Tradeoffs in graph retention, memory, and debugging numerical issues.</p>
+                </article>
+                <article class="post-item">
+                    <p class="post-meta">Nov 2024 - Optimization</p>
+                    <h3><a href="#">Why I still like convex baselines</a></h3>
+                    <p>Convex baselines as sanity checks for noisy objectives and messy datasets.</p>
+                </article>
+                <article class="post-item">
+                    <p class="post-meta">Oct 2024 - Optimization</p>
+                    <h3><a href="#">Gradient noise as a feature</a></h3>
+                    <p>Why stochasticity in training can act like an implicit regularizer.</p>
+                </article>
+                <article class="post-item">
+                    <p class="post-meta">Aug 2024 - Research Notes</p>
+                    <h3><a href="#">Notes on training stability for small models</a></h3>
+                    <p>Observations on initialization, scaling, and loss spikes in low-data regimes.</p>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <footer id="footer">
+        <p>Copyright 2025 Marko Petrov - All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

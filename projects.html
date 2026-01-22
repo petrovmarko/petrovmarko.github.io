@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <title>Projects - Marko Petrov</title>
+    <link rel="icon" href="./assets/213198602.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Projects by Marko Petrov." />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="theme-toggle" aria-label="Toggle theme">Dark</button>
+
+    <div class="page">
+        <header class="page-header">
+            <a class="back-link" href="index.html">Back to home</a>
+            <h1>All Projects</h1>
+            <p>
+                A running list of research prototypes, systems experiments, and curious builds.
+            </p>
+        </header>
+
+        <section class="section" style="--delay: 0.05s;">
+            <div class="cards">
+                <article class="card">
+                    <div>
+                        <p class="card-eyebrow">Neural Networks</p>
+                        <h3>MarkGrad - a small autograd engine</h3>
+                        <p>
+                            A compact automatic differentiation engine built to understand neural
+                            nets from the ground up, with a focus on clarity and inspectable graphs.
+                        </p>
+                        <p class="muted">Stack: Python, NumPy</p>
+                    </div>
+                    <a href="https://github.com/petrovmarko/MarkGrad" class="card-link">View on GitHub</a>
+                </article>
+                <article class="card">
+                    <div>
+                        <p class="card-eyebrow">LLMs</p>
+                        <h3>Bace - a meme generation transformer</h3>
+                        <p>
+                            A transformer model implemented from scratch in PyTorch, trained on a
+                            custom meme dataset for playful text synthesis.
+                        </p>
+                        <p class="muted">Stack: PyTorch, CUDA</p>
+                    </div>
+                    <a href="https://github.com/petrovmarko/MarkGrad" class="card-link">Read the write-up</a>
+                </article>
+                <article class="card">
+                    <div>
+                        <p class="card-eyebrow">Optimization</p>
+                        <h3>Constraint aware routing</h3>
+                        <p>
+                            An experimental solver for pathfinding with time windows and resource
+                            penalties across sparse graphs.
+                        </p>
+                        <p class="muted">Stack: C++, OR-Tools</p>
+                    </div>
+                    <a href="#" class="card-link">Project notes</a>
+                </article>
+                <article class="card">
+                    <div>
+                        <p class="card-eyebrow">Data Systems</p>
+                        <h3>Polars lab notebooks</h3>
+                        <p>
+                            A collection of data processing experiments focused on vectorized
+                            pipelines and memory profiling.
+                        </p>
+                        <p class="muted">Stack: Python, Polars</p>
+                    </div>
+                    <a href="#" class="card-link">Browse notebooks</a>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <footer id="footer">
+        <p>Copyright 2025 Marko Petrov - All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
