@@ -121,18 +121,17 @@ img {
     border-radius: 28px;
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
-    transition: transform 0.6s ease;
-    --flip-rotation: 0deg;
-    transform: translateY(0) scale(1) rotateY(var(--flip-rotation));
+    transition: transform 0.6s ease, filter 0.6s ease;
+    transform: translateY(0) scale(1);
 }
 
 .portrait-entrance {
     opacity: 0;
-    animation: portrait-rise 0.8s ease 0.1s forwards;
+    animation: portrait-rise 0.6s ease 0.1s forwards;
 }
 
-.portrait.flip {
-    --flip-rotation: 180deg;
+.portrait.swap {
+    animation: portrait-swap 0.45s ease;
 }
 
 .brand-text h1 {
@@ -530,12 +529,27 @@ footer {
 @keyframes portrait-rise {
     from {
         opacity: 0;
-        transform: translateY(14px) scale(0.96) rotateY(var(--flip-rotation));
+        transform: translateY(14px) scale(0.96);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1) rotateY(var(--flip-rotation));
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes portrait-swap {
+    0% {
+        transform: translateY(0) scale(1);
+        filter: saturate(1);
+    }
+    45% {
+        transform: translateY(-6px) scale(0.97);
+        filter: saturate(0.8);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        filter: saturate(1);
     }
 }
 

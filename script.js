@@ -22,9 +22,9 @@ function setTheme(theme, skipAnimation) {
     }
 
     if (selfie) {
-        selfie.classList.add("flip");
-        setTimeout(() => setPortrait(theme), 250);
-        setTimeout(() => selfie.classList.remove("flip"), 600);
+        selfie.classList.add("swap");
+        setTimeout(() => setPortrait(theme), 140);
+        setTimeout(() => selfie.classList.remove("swap"), 480);
     } else {
         setPortrait(theme);
     }
