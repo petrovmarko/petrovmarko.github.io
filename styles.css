@@ -113,25 +113,24 @@ img {
     justify-content: center;
 }
 
-.card-header .portrait {
-    width: min(180px, 40vw);
-}
-
 .portrait {
     border-radius: 28px;
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
-    transition: transform 0.6s ease, filter 0.6s ease;
+    transition: transform 0.4s ease, filter 0.4s ease;
     transform: translateY(0) scale(1);
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
 }
 
 .portrait-entrance {
     opacity: 0;
-    animation: portrait-rise 0.6s ease 0.1s forwards;
+    animation: portrait-rise 0.5s ease 0.08s forwards;
 }
 
 .portrait.swap {
-    animation: portrait-swap 0.45s ease;
+    animation: portrait-swap 0.35s ease;
 }
 
 .brand-text h1 {

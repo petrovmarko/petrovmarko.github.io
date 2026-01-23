@@ -38,12 +38,24 @@ setTheme(stored || "light", true);
 const textTargets = document.querySelectorAll(
     ".visit-card h1, .visit-card h2, .visit-card h3, .visit-card p, .visit-card li, .visit-card span, .visit-card a"
 );
-textTargets.forEach((element, index) => {
-    element.classList.add("text-reveal");
-    element.style.animationDelay = `${0.12 + index * 0.03}s`;
-});
+
+function startTextReveal() {
+    textTargets.forEach((element) => {
+        element.classList.remove("text-reveal");
+        element.style.animationDelay = "";
+    });
+    // Force reflow so the animation restarts.
+    void document.body.offsetHeight;
+    textTargets.forEach((element, index) => {
+        element.classList.add("text-reveal");
+        element.style.animationDelay = `${0.12 + index * 0.03}s`;
+    });
+}
+
+startTextReveal();
 
 toggle.addEventListener("click", () => {
     const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
     setTheme(next, false);
+    startTextReveal();
 });
