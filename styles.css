@@ -591,4 +591,8 @@ footer {
     .visit-card {
         padding: 2rem 1.5rem;
     }
+
+    .compact-widgets {
+        grid-template-columns: 1fr;
+    }
 }
