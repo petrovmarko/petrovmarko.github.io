@@ -14,7 +14,7 @@ function setPortrait(theme) {
 
 function setTheme(theme, skipAnimation) {
     root.setAttribute("data-theme", theme);
-    toggle.textContent = theme === "light" ? "Light" : "Dark";
+    toggle.textContent = theme === "light" ? "☀" : "☾";
 
     if (skipAnimation) {
         setPortrait(theme);
@@ -32,9 +32,16 @@ function setTheme(theme, skipAnimation) {
     localStorage.setItem("theme", theme);
 }
 
-const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
 const stored = localStorage.getItem("theme");
-setTheme(stored || systemTheme, true);
+setTheme(stored || "light", true);
+
+const textTargets = document.querySelectorAll(
+    ".visit-card h1, .visit-card h2, .visit-card h3, .visit-card p, .visit-card li, .visit-card span, .visit-card a"
+);
+textTargets.forEach((element, index) => {
+    element.classList.add("text-reveal");
+    element.style.animationDelay = `${0.12 + index * 0.03}s`;
+});
 
 toggle.addEventListener("click", () => {
     const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
