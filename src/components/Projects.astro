@@ -1,0 +1,46 @@
+---
+const projects = [
+  {
+    name: 'MarkGrad',
+    year: '2024 – present',
+    desc: 'A from-scratch automatic differentiation engine in Python. Implements reverse-mode backpropagation over dynamic computation graphs, with scalar and tensor operations and a small neural network layer built on top.',
+    tags: ['Python', 'Deep Learning', 'Autograd'],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/petrovmarko/MarkGrad' },
+    ],
+  },
+  {
+    name: 'BirdCLEF+ 2026',
+    year: '2026',
+    desc: 'Kaggle competition entry for bird species identification from passive acoustic monitoring recordings. Approach: convolutional models over mel spectrograms with test-time augmentation.',
+    tags: ['PyTorch', 'Audio ML', 'Kaggle'],
+    links: [
+      { label: 'Competition', href: 'https://www.kaggle.com/competitions/birdclef-2026/overview' },
+      { label: 'Profile',     href: 'https://kaggle.com/petrovmarko' },
+    ],
+  },
+];
+---
+
+<section id="projects">
+  <h1 class="section-heading">Projects:</h1>
+
+  <div class="space-y-7">
+    {projects.map(p => (
+      <article class="project">
+        <h2 class="entry-title">{p.name}</h2>
+        <p class="entry-meta text-text-muted text-sm">
+          <em>{p.year}</em> &mdash; {p.tags.join(' · ')}
+        </p>
+        <p class="text-text-primary text-[0.95rem] leading-relaxed mb-1">
+          {p.desc}
+        </p>
+        <p class="entry-links text-sm">
+          {p.links.map(l => (
+            <a href={l.href} target="_blank" rel="noreferrer">{l.label}</a>
+          ))}
+        </p>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+const papers = [
+  {
+    year: '2025',
+    title: 'Gradient Flow Dynamics in Sparse Autoregressive Models',
+    authors: 'M. Petrov, A. Nikolov',
+    venue: 'Preprint',
+    abstract: 'We study how gradient signal propagates through autoregressive language models under structured sparsity constraints, identifying a class of initialization schemes that stabilize training at scale.',
+    href: '#',
+  },
+  {
+    year: '2025',
+    title: 'On the Sample Efficiency of Contrastive Audio Representations for Bioacoustic Classification',
+    authors: 'M. Petrov',
+    venue: 'Preprint',
+    abstract: 'An empirical analysis of self-supervised contrastive pretraining on long-tailed bioacoustic datasets. We show that patch-level augmentation strategies significantly improve downstream classification under few-shot conditions.',
+    href: '#',
+  },
+  {
+    year: '2024',
+    title: 'A Survey of Automatic Differentiation Systems: From Scalar Tape to Tensor Compilation',
+    authors: 'M. Petrov',
+    venue: 'Course manuscript',
+    abstract: 'A technical review of autograd frameworks spanning scalar reverse-mode AD, operator overloading, source transformation, and XLA-style compilation. Includes a comparative analysis of PyTorch, JAX, and a hand-built scalar engine.',
+    href: '#',
+  },
+];
+---
+
+<section id="papers" class="max-w-prose mx-auto px-6 py-12 border-t border-border">
+  <h2 class="text-xs font-mono text-text-faint uppercase tracking-widest mb-8">Research</h2>
+
+  <div class="space-y-10">
+    {papers.map(p => (
+      <div>
+        <div class="flex items-baseline gap-4 mb-1">
+          <span class="font-mono text-xs text-text-faint tabular-nums shrink-0">{p.year}</span>
+          <a
+            href={p.href}
+            class="text-text-primary font-medium leading-snug hover:text-accent transition-colors"
+          >
+            {p.title} ↗
+          </a>
+        </div>
+        <p class="text-text-faint text-xs pl-[3.5rem] mb-2">
+          {p.authors} &mdash; <em>{p.venue}</em>
+        </p>
+        <p class="text-text-muted text-sm leading-relaxed pl-[3.5rem]">
+          {p.abstract}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>

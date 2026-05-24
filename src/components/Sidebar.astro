@@ -1,0 +1,139 @@
+---
+const links = [
+  { label: 'GitHub',   href: 'https://github.com/petrovmarko',                         icon: 'github' },
+  { label: 'LinkedIn', href: 'https://mk.linkedin.com/in/marko-petrov-926637332',      icon: 'linkedin' },
+  { label: 'Kaggle',   href: 'https://kaggle.com/petrovmarko',                         icon: 'kaggle' },
+  { label: 'LeetCode', href: 'https://leetcode.com/u/petrovmarko/',                    icon: 'leetcode' },
+];
+---
+
+<aside class="sidebar">
+  <div class="avatar" aria-hidden="true">MP</div>
+
+  <h3 class="sidebar-name">Marko Petrov</h3>
+
+  <ul class="sidebar-meta">
+    <li>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      North Macedonia
+    </li>
+    <li>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      Computer Science Student
+    </li>
+    <li>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+      Deep Learning · Algorithms
+    </li>
+  </ul>
+
+  <ul class="sidebar-links">
+    {links.map(l => (
+      <li>
+        <a href={l.href} target="_blank" rel="noreferrer">
+          <span class="link-icon" aria-hidden="true">
+            {l.icon === 'github' && (
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.95 10.95 0 015.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.36-5.25 5.65.41.36.78 1.06.78 2.13v3.16c0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            )}
+            {l.icon === 'linkedin' && (
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            )}
+            {l.icon === 'kaggle' && (
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.83 23.5l-7-9.18-1.74 1.69v6.85a.65.65 0 01-.65.65H6.65a.65.65 0 01-.65-.65V.65A.65.65 0 016.65 0h2.79a.65.65 0 01.65.65v13.46l6.92-7.05a.99.99 0 01.7-.28h3.29c.39 0 .58.45.32.74l-6.65 6.66 7.04 9.09a.4.4 0 01-.34.62h-2.83c-.16 0-.31-.07-.41-.2"/></svg>
+            )}
+            {l.icon === 'leetcode' && (
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.48 14.05a3.85 3.85 0 010-5.45l4.61-4.6a1.37 1.37 0 000-1.95L16.71.66a1.37 1.37 0 00-1.94 0L4.55 10.71a4.42 4.42 0 000 6.27l5.95 6.07a4.42 4.42 0 006.27 0l4.6-4.6a1.37 1.37 0 000-1.95l-1.38-1.38a1.37 1.37 0 00-1.95 0l-2.91 2.91a1.92 1.92 0 01-2.71 0l-2.94-2.95a1.92 1.92 0 010-2.7zm9.34 1.97h-9.62a1.37 1.37 0 100 2.74h9.62a1.37 1.37 0 100-2.74z"/></svg>
+            )}
+          </span>
+          {l.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</aside>
+
+<style>
+  .sidebar {
+    width: 240px;
+    flex-shrink: 0;
+  }
+  @media (min-width: 1024px) {
+    .sidebar {
+      position: sticky;
+      top: 1.5rem;
+      align-self: flex-start;
+    }
+  }
+
+  .avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #e8f0fc 0%, #d4e3f7 100%);
+    color: #2a7ae2;
+    font-weight: 700;
+    font-size: 2.25rem;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 1px solid #dbe6f5;
+  }
+
+  .sidebar-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #252a2e;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .sidebar-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+    font-size: 0.95rem;
+    color: #5e616a;
+  }
+  .sidebar-meta li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+    line-height: 1.4;
+  }
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    color: #5e616a;
+  }
+
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .sidebar-links li {
+    padding: 0.2rem 0;
+  }
+  .sidebar-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2a7ae2;
+  }
+  .link-icon {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    color: #5e616a;
+  }
+  .link-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+</style>

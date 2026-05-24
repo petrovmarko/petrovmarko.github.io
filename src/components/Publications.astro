@@ -1,0 +1,50 @@
+---
+// Empty placeholder. Add real publications below — see the commented example for shape.
+const publications: Array<{
+  title: string;
+  authors: string;
+  venue: string;
+  year: string;
+  links: { label: string; href: string }[];
+}> = [
+  // {
+  //   title: 'Example Paper Title',
+  //   authors: 'M. Petrov, Co-Author',
+  //   venue: 'Venue Acronym',
+  //   year: '2026',
+  //   links: [
+  //     { label: 'arXiv', href: 'https://arxiv.org/abs/...' },
+  //     { label: 'Slides', href: '/files/slides.pdf' },
+  //   ],
+  // },
+];
+---
+
+<section id="publications">
+  <h1 class="section-heading">Publications:</h1>
+
+  {publications.length === 0 ? (
+    <p class="text-text-muted text-sm italic">
+      No publications yet — coming soon.
+    </p>
+  ) : (
+    <div class="space-y-6">
+      {publications.map(p => (
+        <article class="pub">
+          <h2 class="entry-title">{p.title}</h2>
+          <p class="entry-meta text-text-muted text-sm">
+            {p.authors}
+          </p>
+          <p class="entry-meta text-text-muted text-sm">
+            <em>{p.venue}'{p.year.slice(-2)}</em>
+          </p>
+          <p class="entry-links text-sm">
+            {p.links.map(l => (
+              <a href={l.href} target="_blank" rel="noreferrer">{l.label}</a>
+            ))}
+          </p>
+        </article>
+      ))}
+    </div>
+  )}
+</section>

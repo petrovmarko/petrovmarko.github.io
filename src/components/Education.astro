@@ -1,0 +1,64 @@
+---
+const entries = [
+  {
+    period: '2024 – 2028',
+    degree: 'Bachelor of Science, Computer Science',
+    institution: 'Faculty of Computer Science & Engineering, Skopje, North Macedonia',
+    thesis: null,
+    advisor: null,
+  },
+];
+---
+
+<section id="education">
+  <h1 class="section-heading">Education:</h1>
+  <ul class="edu-list">
+    {entries.map(e => (
+      <li>
+        <p class="edu-period"><em>{e.period}</em></p>
+        <p class="edu-degree">{e.degree}</p>
+        <p class="edu-institution">{e.institution}</p>
+        {e.thesis && (
+          <p class="edu-extra">
+            Thesis: <em>{e.thesis}</em>
+            {e.advisor && <> (Supervisor: {e.advisor})</>}
+          </p>
+        )}
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .edu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .edu-list > li {
+    padding: 0.5rem 0;
+    margin-bottom: 0.75rem;
+  }
+  .edu-list > li:last-child { margin-bottom: 0; }
+
+  .edu-period {
+    color: #5e616a;
+    font-size: 0.9rem;
+    margin-bottom: 0.15rem;
+  }
+  .edu-degree {
+    color: #252a2e;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+  }
+  .edu-institution {
+    color: #252a2e;
+    font-size: 0.95rem;
+  }
+  .edu-extra {
+    color: #5e616a;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+  }
+</style>

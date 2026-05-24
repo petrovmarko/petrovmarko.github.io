@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200">
+  <defs>
+    <style>
+      .topo { fill: none; stroke-width: 1; opacity: 0.35; }
+      .topo-bold { fill: none; stroke-width: 1.6; opacity: 0.5; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="200" fill="#0d1117"/>
+
+  <!-- Topographic contour lines - layer 1 (wide loops) -->
+  <g stroke="#58a6ff">
+    <!-- Bottom-left mountain cluster -->
+    <ellipse class="topo" cx="120" cy="230" rx="200" ry="130"/>
+    <ellipse class="topo" cx="120" cy="230" rx="165" ry="105"/>
+    <ellipse class="topo" cx="120" cy="230" rx="130" ry="80"/>
+    <ellipse class="topo-bold" cx="120" cy="230" rx="95" ry="55"/>
+    <ellipse class="topo" cx="120" cy="230" rx="62" ry="32"/>
+
+    <!-- Right mountain cluster -->
+    <ellipse class="topo" cx="780" cy="-30" rx="220" ry="160"/>
+    <ellipse class="topo" cx="780" cy="-30" rx="185" ry="130"/>
+    <ellipse class="topo" cx="780" cy="-30" rx="150" ry="100"/>
+    <ellipse class="topo-bold" cx="780" cy="-30" rx="115" ry="72"/>
+    <ellipse class="topo" cx="780" cy="-30" rx="80" ry="46"/>
+    <ellipse class="topo" cx="780" cy="-30" rx="48" ry="24"/>
+
+    <!-- Center-right cluster -->
+    <ellipse class="topo" cx="500" cy="220" rx="180" ry="120"/>
+    <ellipse class="topo" cx="500" cy="220" rx="145" ry="95"/>
+    <ellipse class="topo" cx="500" cy="220" rx="110" ry="70"/>
+    <ellipse class="topo-bold" cx="500" cy="220" rx="78" ry="48"/>
+    <ellipse class="topo" cx="500" cy="220" rx="48" ry="28"/>
+
+    <!-- Top-left small cluster -->
+    <ellipse class="topo" cx="270" cy="-10" rx="130" ry="90"/>
+    <ellipse class="topo" cx="270" cy="-10" rx="100" ry="68"/>
+    <ellipse class="topo-bold" cx="270" cy="-10" rx="70" ry="46"/>
+    <ellipse class="topo" cx="270" cy="-10" rx="42" ry="26"/>
+
+    <!-- Far left small -->
+    <ellipse class="topo" cx="-20" cy="80" rx="100" ry="70"/>
+    <ellipse class="topo" cx="-20" cy="80" rx="70" ry="48"/>
+    <ellipse class="topo-bold" cx="-20" cy="80" rx="42" ry="28"/>
+
+    <!-- Mid cluster -->
+    <ellipse class="topo" cx="660" cy="180" rx="120" ry="80"/>
+    <ellipse class="topo" cx="660" cy="180" rx="90" ry="58"/>
+    <ellipse class="topo-bold" cx="660" cy="180" rx="60" ry="36"/>
+    <ellipse class="topo" cx="660" cy="180" rx="34" ry="18"/>
+  </g>
+
+  <!-- Gradient overlay to fade edges -->
+  <defs>
+    <linearGradient id="fadeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:0.7"/>
+      <stop offset="20%" style="stop-color:#0d1117;stop-opacity:0"/>
+      <stop offset="80%" style="stop-color:#0d1117;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:0.7"/>
+    </linearGradient>
+    <linearGradient id="fadeTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:0.5"/>
+      <stop offset="40%" style="stop-color:#0d1117;stop-opacity:0"/>
+      <stop offset="60%" style="stop-color:#0d1117;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#0d1117;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="200" fill="url(#fadeLeft)"/>
+  <rect width="900" height="200" fill="url(#fadeTop)"/>
+
+  <!-- Text -->
+  <text x="450" y="95" font-family="'Segoe UI', system-ui, sans-serif" font-size="42" font-weight="700" fill="#e6edf3" text-anchor="middle" letter-spacing="2">Hi, I'm Marko</text>
+  <text x="450" y="135" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" fill="#8b949e" text-anchor="middle" letter-spacing="1">CS Student · Deep Learning · Algorithms</text>
+</svg>
