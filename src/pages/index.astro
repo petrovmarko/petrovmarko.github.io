@@ -7,42 +7,81 @@ import Layout from '../layouts/Layout.astro';
     <h1>Marko Petrov</h1>
 
     <p>
-      I'm a Computer Science student at <a href="https://www.finki.ukim.mk/en">FCSE Skopje</a>,
-      focused on deep learning and algorithms. Right now I'm building
-      <a href="https://github.com/petrovmarko/MarkGrad">MarkGrad</a>, an autograd engine from
-      scratch, and competing in
-      <a href="https://www.kaggle.com/competitions/birdclef-2026/overview">BirdCLEF+ 2026</a>.
+      I'm a Computer Science student at <a href="https://www.finki.ukim.mk/en">FCSE Skopje</a>.
+      I'm currently working on
+      <a href="https://en.wikipedia.org/wiki/Submodular_set_function">stochastic submodular maximization</a>
+      and research competitions on
+      <a href="https://www.kaggle.com/">Kaggle</a>.
     </p>
 
     <p>
-      Previously I've worked on competitive programming, statistics, and small ML projects.
-      I'm interested in research, startups, and financial markets — and I solve a lot of puzzles.
+      Previously, I was briefly a competitive programmer during my last two years of high school —
+      ranking at the top in the country and competing at several prestigious science competitions,
+      including the
+      <a href="https://ioinformatics.org/">International Olympiad in Informatics</a>.
     </p>
 
     <p>
-      Reach me on
-      <a href="https://github.com/petrovmarko">GitHub</a>,
-      <a href="https://mk.linkedin.com/in/marko-petrov-926637332">LinkedIn</a>,
-      or at <a href="mailto:marko@example.com">marko@example.com</a>.
+      I'm interested in science, research, reasoning from first principles, and leveraging
+      AI agents.
+    </p>
+
+    <p class="links">
+      <a href="mailto:marko.petrov.2@students.finki.ukim.mk">Email</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/petrovmarko">GitHub</a>
+      <span class="sep">·</span>
+      <a href="https://mk.linkedin.com/in/marko-petrov-926637332">LinkedIn</a>
     </p>
   </main>
 </Layout>
 
 <style>
   main {
-    max-width: 640px;
+    max-width: 620px;
     margin: 0 auto;
-    padding: 6rem 1.5rem 4rem;
+    padding: 7rem 1.5rem 5rem;
+    font-family: ui-serif, "Iowan Old Style", "Apple Garamond", Baskerville,
+      "Times New Roman", Times, serif;
     font-size: 1.0625rem;
-    line-height: 1.65;
-    color: #1a1a1a;
+    line-height: 1.7;
+    color: #1f1f1f;
   }
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.625rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.75rem;
+    color: #111;
   }
   p {
     margin-bottom: 1.25rem;
+  }
+  :global(main a) {
+    color: #1f1f1f;
+    text-decoration: underline;
+    text-decoration-color: #c9c9c9;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s ease, color 0.15s ease;
+  }
+  :global(main a:hover) {
+    color: #000;
+    text-decoration-color: #1f1f1f;
+  }
+  .links {
+    margin-top: 2.5rem;
+    font-size: 0.95rem;
+  }
+  .links .sep {
+    color: #b5b5b5;
+    margin: 0 0.5rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(body) { background: #111; }
+    main { color: #e6e6e6; }
+    h1 { color: #f5f5f5; }
+    :global(main a) { color: #e6e6e6; text-decoration-color: #555; }
+    :global(main a:hover) { color: #fff; text-decoration-color: #e6e6e6; }
+    .links .sep { color: #555; }
   }
 </style>
