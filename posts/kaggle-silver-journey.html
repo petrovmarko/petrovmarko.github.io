@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Journey to Kaggle Silver — Marko Petrov</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../index.css">
+    <script src="../theme.js"></script>
+
+    <!-- KaTeX for LaTeX math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+
+<body>
+    <div id="holder">
+        <div id="left"></div>
+        <div id="middle">
+            <h1>My Journey to Kaggle Silver</h1>
+            <p class="post-meta">May 2026</p>
+            <div class="post-body">
+                <p>Earning my first silver medal on Kaggle was a milestone I'd been chasing for months. The competition was a tabular data challenge — the kind where feature engineering matters more than model selection, and where a single creative feature can jump you 100 places on the leaderboard.</p>
+                <p>The biggest lesson I learned: cross-validation strategy is everything. My early submissions were overfit to the public leaderboard because my CV folds weren't stratified properly. Once I switched to stratified group k-fold, my local scores finally correlated with the leaderboard, and I stopped second-guessing myself.</p>
+                <p>Let's break down the math. The cross-validation estimate of generalization error is:</p>
+                <p>$$\text{CV}_{(k)} = \frac{1}{k} \sum_{i=1}^{k} \text{Err}_i = \frac{1}{k} \sum_{i=1}^{k} \frac{1}{|D_i|} \sum_{(x,y) \in D_i} \mathbb{1}[f(x) \neq y]$$</p>
+                <p>where $D_i$ is the validation set for fold $i$ and $\mathbb{1}[\cdot]$ is the indicator function. The key insight is that if your folds aren't stratified, $\text{Err}_i$ has high variance across folds, making $\text{CV}_{(k)}$ unreliable.</p>
+                <p>Another turning point was ensemble strategy. I was stuck around the top 15% with a single LightGBM model. Stacking it with a CatBoost model and a simple neural net — each capturing different error patterns — pushed me into medal territory. The ensemble prediction is a weighted combination:</p>
+                <p>$$\hat{y} = \sum_{j=1}^{m} w_j \hat{y}_j, \quad \text{where} \quad \sum_{j=1}^{m} w_j = 1, \quad w_j \geq 0$$</p>
+                <p>The optimal weights $w_j$ minimize the validation loss $\mathcal{L}(\hat{y}, y)$, typically via constrained optimization. In practice, a simple average ($w_j = 1/m$) already captures most of the benefit.</p>
+                <p>The Kaggle community is incredibly generous with knowledge. Reading top solution writeups after every competition taught me more about practical ML than any course. Now the goal is gold — it's going to require a fundamentally different approach, and I'm ready for it.</p>
+            </div>
+            <a href="../index.html" class="back-link">← Back to home</a>
+        </div>
+        <div id="right"></div>
+    </div>
+</body>
+</html>
