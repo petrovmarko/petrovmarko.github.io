@@ -47,10 +47,10 @@ h1 {
 
 #holder {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding-top: clamp(32px, 8vh, 110px);
     padding-bottom: 60px;
-    padding-left: clamp(24px, 9vw, 160px);
+    padding-left: 24px;
     padding-right: 24px;
     box-sizing: border-box;
 }
