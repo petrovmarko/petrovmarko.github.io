@@ -8,6 +8,7 @@
     --border: #d1cfc5;
     --switch-track: #faf9f5;
     --switch-knob: #1f1e1d;
+    --card-bg: #faf9f5;
 }
 
 [data-theme="dark"] {
@@ -16,6 +17,7 @@
     --text-secondary: #b0aea5;
     --link-hover: #b0aea5;
     --border: #5e5d59;
+    --card-bg: #3d3d3a;
 }
 
 body {
@@ -76,6 +78,89 @@ a {
 }
 
 a:hover {
+    color: var(--link-hover);
+}
+
+/* GLOSSARY POPOVERS */
+
+.glossary {
+    position: relative;
+}
+
+.glossary-term {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    vertical-align: baseline;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 0.07em;
+    transition: color 0.2s linear;
+}
+
+.glossary-term:hover {
+    color: var(--link-hover);
+}
+
+.glossary-card {
+    position: absolute;
+    top: calc(100% + 7px);
+    left: 0;
+    z-index: 50;
+    width: max-content;
+    max-width: 17em;
+    padding: 0.7em 0.85em;
+    background-color: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    font-size: 0.82em;
+    line-height: 1.45;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+}
+
+/* Invisible bridge so the gap above the card doesn't drop hover. */
+.glossary-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9px;
+    height: 9px;
+}
+
+.glossary.is-open .glossary-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.glossary-def {
+    display: block;
+}
+
+.glossary-link {
+    display: inline-block;
+    margin-top: 0.55em;
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+    text-decoration-thickness: 0.06em;
+}
+
+.glossary-link:hover {
     color: var(--link-hover);
 }
 
