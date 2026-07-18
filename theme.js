@@ -1,9 +1,9 @@
 (function() {
-    // Apply saved theme immediately
+    // Apply the saved theme immediately, defaulting to dark when the visitor
+    // has not chosen one. Always set the attribute so the toggle's checked
+    // state below can rely on it.
     const saved = localStorage.getItem('theme');
-    if (saved) document.documentElement.setAttribute('data-theme', saved);
-    else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-        document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.setAttribute('data-theme', saved || 'dark');
 
     // Inject toggle switch after DOM loads
     document.addEventListener('DOMContentLoaded', function() {
