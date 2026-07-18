@@ -23,6 +23,16 @@
     --card-bg: #faf9f5;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 body {
     font-family: "Newsreader", "Times New Roman", serif;
     font-optical-sizing: auto;
@@ -82,6 +92,67 @@ a {
 
 a:hover {
     color: var(--link-hover);
+}
+
+/* TABLE OF CONTENTS */
+
+/* Only shown when there is room left of the centered 620px column. */
+#toc {
+    display: none;
+    position: fixed;
+    top: clamp(32px, 8vh, 110px);
+    left: calc(50% - 530px);
+    width: 170px;
+    font-size: 0.8em;
+    line-height: 1.5;
+}
+
+@media (min-width: 1180px) {
+    #toc {
+        display: block;
+    }
+}
+
+.toc-label {
+    display: block;
+    font-size: 0.75em;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 1em;
+}
+
+.toc-link {
+    position: relative;
+    display: block;
+    padding-left: 1.5em;
+    margin-bottom: 0.65em;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s linear;
+}
+
+.toc-link::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toc-link:hover {
+    color: var(--text);
+}
+
+.toc-link.is-active {
+    color: var(--text);
+}
+
+.toc-link.is-active::before {
+    opacity: 1;
+    transform: none;
 }
 
 /* GLOSSARY POPOVERS */
@@ -174,6 +245,7 @@ h2 {
     margin-top: 1.3em;
     margin-bottom: 0.84em;
     text-align: left;
+    scroll-margin-top: 24px;
 }
 
 .section-list {
