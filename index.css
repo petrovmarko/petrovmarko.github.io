@@ -155,6 +155,170 @@ a:hover {
     transform: none;
 }
 
+/* TYPEWRITER CARET */
+
+.tw-cursor {
+    display: inline-block;
+    width: 0.08em;
+    height: 1.05em;
+    margin-left: 0.06em;
+    background: currentColor;
+    vertical-align: -0.15em;
+    animation: tw-blink 1s steps(1) infinite;
+}
+
+@keyframes tw-blink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+
+/* MOBILE TOP BAR + SECTION MENU */
+
+/* Hidden on wide viewports, where the contents rail handles navigation. */
+#mobile-bar,
+#mobile-menu,
+#mobile-menu-backdrop {
+    display: none;
+}
+
+@media (max-width: 1179px) {
+    #mobile-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1em;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 230;
+        padding: 0.7em clamp(16px, 5vw, 32px);
+        background-color: var(--bg);
+        border-bottom: 1px solid var(--border);
+        transform: translateY(-100%);
+        transition: transform 0.28s ease;
+    }
+
+    #mobile-bar.is-visible {
+        transform: translateY(0);
+    }
+
+    #mobile-name {
+        font-weight: 600;
+        font-size: 1.1em;
+        white-space: nowrap;
+    }
+
+    #menu-toggle {
+        position: relative;
+        flex-shrink: 0;
+        width: 28px;
+        height: 20px;
+        background: none;
+        border: 0;
+        padding: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+    }
+
+    #menu-toggle span {
+        position: absolute;
+        left: 2px;
+        right: 2px;
+        height: 2px;
+        background-color: var(--text);
+        transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+
+    #menu-toggle span:nth-child(1) { top: 2px; }
+    #menu-toggle span:nth-child(2) { top: 9px; }
+    #menu-toggle span:nth-child(3) { top: 16px; }
+
+    body.menu-open #menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.menu-open #menu-toggle span:nth-child(2) { opacity: 0; }
+    body.menu-open #menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    #mobile-menu-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 210;
+        background: rgba(0, 0, 0, 0.45);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, visibility 0.25s;
+    }
+
+    #mobile-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 220;
+        background-color: var(--bg);
+        border-bottom: 1px solid var(--border);
+        /* Top padding clears the fixed bar so its close button stays tappable. */
+        padding: 4.2em clamp(16px, 5vw, 32px) 1.5em;
+        transform: translateY(-100%);
+        transition: transform 0.28s ease;
+    }
+
+    body.menu-open #mobile-menu {
+        transform: translateY(0);
+    }
+
+    body.menu-open #mobile-menu-backdrop {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-label {
+        display: block;
+        font-size: 0.75em;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+        margin-bottom: 1em;
+    }
+
+    #mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85em;
+    }
+
+    .mobile-menu-link {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 1.15em;
+        transition: color 0.2s linear;
+    }
+
+    .mobile-menu-link:hover {
+        color: var(--text-secondary);
+    }
+
+    /* Offset anchor targets so headings clear the fixed bar when jumped to. */
+    h2 {
+        scroll-margin-top: 72px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #mobile-bar,
+    #mobile-menu,
+    #mobile-menu-backdrop {
+        transition: none;
+    }
+
+    .tw-cursor {
+        animation: none;
+    }
+}
+
 /* GLOSSARY POPOVERS */
 
 .glossary {
