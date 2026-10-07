@@ -5,9 +5,9 @@
     color-scheme: dark;
     --bg: #18201b;
     --text: #f0eee6;
-    --text-secondary: #a7b0a6;
-    --link: #bfd2b8;
-    --link-hover: #e0e9dc;
+    --text-secondary: var(--text);
+    --link: var(--text);
+    --link-hover: #ffffff;
     --border: #3c4a40;
     --card-bg: #222c25;
     --accent: #9fbb98;
@@ -15,7 +15,6 @@
     --selection-text: #fbf8ee;
     --focus-ring: #b6cdae;
     --shadow: rgba(5, 12, 7, 0.35);
-    --backdrop: rgba(5, 12, 7, 0.55);
 }
 
 html {
@@ -117,12 +116,10 @@ a:hover {
     50.01%, 100% { opacity: 0; }
 }
 
-/* MOBILE TOP BAR + SECTION MENU */
+/* MOBILE TOP BAR */
 
-/* Compact section navigation for smaller viewports only. */
-#mobile-bar,
-#mobile-menu,
-#mobile-menu-backdrop {
+/* Compact name bar for smaller viewports only. */
+#mobile-bar {
     display: none;
 }
 
@@ -130,8 +127,6 @@ a:hover {
     #mobile-bar {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 1em;
         position: fixed;
         top: 0;
         left: 0;
@@ -153,109 +148,10 @@ a:hover {
         font-size: 1.1em;
         white-space: nowrap;
     }
-
-    #menu-toggle {
-        position: relative;
-        flex-shrink: 0;
-        width: 28px;
-        height: 20px;
-        background: none;
-        border: 0;
-        padding: 0;
-        -webkit-appearance: none;
-        appearance: none;
-        cursor: pointer;
-    }
-
-    #menu-toggle span {
-        position: absolute;
-        left: 2px;
-        right: 2px;
-        height: 2px;
-        background-color: var(--text);
-        transition: transform 0.25s ease, opacity 0.2s ease;
-    }
-
-    #menu-toggle span:nth-child(1) { top: 2px; }
-    #menu-toggle span:nth-child(2) { top: 9px; }
-    #menu-toggle span:nth-child(3) { top: 16px; }
-
-    body.menu-open #menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    body.menu-open #menu-toggle span:nth-child(2) { opacity: 0; }
-    body.menu-open #menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    #mobile-menu-backdrop {
-        display: block;
-        position: fixed;
-        inset: 0;
-        z-index: 210;
-        background: var(--backdrop);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.25s ease, visibility 0.25s;
-    }
-
-    #mobile-menu {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 220;
-        background-color: var(--bg);
-        border-bottom: 1px solid var(--border);
-        /* Top padding clears the fixed bar so its close button stays tappable. */
-        padding: 4.2em clamp(16px, 5vw, 32px) 1.5em;
-        transform: translateY(-100%);
-        transition: transform 0.28s ease;
-    }
-
-    body.menu-open #mobile-menu {
-        transform: translateY(0);
-    }
-
-    body.menu-open #mobile-menu-backdrop {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .mobile-menu-label {
-        display: block;
-        font-size: 0.75em;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--text-secondary);
-        margin-bottom: 1em;
-    }
-
-    #mobile-menu nav {
-        display: flex;
-        flex-direction: column;
-        gap: 0.85em;
-    }
-
-    .mobile-menu-link {
-        color: var(--text);
-        text-decoration: none;
-        font-size: 1.15em;
-        transition: color 0.2s linear;
-    }
-
-    .mobile-menu-link:hover {
-        color: var(--text-secondary);
-    }
-
-    /* Offset anchor targets so headings clear the fixed bar when jumped to. */
-    h2 {
-        scroll-margin-top: 72px;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    #mobile-bar,
-    #mobile-menu,
-    #mobile-menu-backdrop {
+    #mobile-bar {
         transition: none;
     }
 
