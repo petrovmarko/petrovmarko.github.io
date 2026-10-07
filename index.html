@@ -12,9 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <script src="theme.js"></script>
     <script src="glossary.js" defer></script>
-    <script src="toc.js" defer></script>
     <script src="typewriter.js" defer></script>
     <script src="mobile-nav.js" defer></script>
 </head>
@@ -40,7 +38,8 @@
 
             <h2>Competitions</h2>
             <ul class="section-list">
-                <li>Coming soon</li>
+                <li><strong>NCAA March Madness (Kaggle, Silver Medal).</strong> Developed an ensemble-based forecasting pipeline for Kaggle’s NCAA March Madness competition. I used out-of-fold validation across held-out seasons and trained an ensemble to predict the point differential for every possible tournament matchup from season-level statistics. My biggest performance gains came from tuning against a reliable validation setup. The work focused primarily on feature engineering and identifying predictive patterns in historical game data. I then used spline interpolation to calibrate the predicted margins into a single win-probability estimate and optimized the pipeline for Brier score. The final solution finished in the top 2%.</li>
+                <li><strong>3D Cell Tracking During Zebrafish Development (Kaggle).</strong> Developed an end-to-end computer vision pipeline for the Kaggle BioHub Cell Tracking During Development competition. The system processed anisotropic 3D time-lapse microscopy, detected individual cell centers, associated cells across consecutive frames, and identified division events to reconstruct complete lineage graphs. The final solution combined learned division prediction with temporal tracking and carefully tuned post-processing in a reproducible, competition-ready inference notebook. My best solution ranked in the top 12%.</li>
             </ul>
 
             <h2>Other Projects</h2>

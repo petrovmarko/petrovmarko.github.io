@@ -1,26 +1,21 @@
 /* GENERAL PAGE RULES */
 
-/* Dark is the default theme, so it lives on :root — the page renders dark
-   even before theme.js runs (no light flash) or if JS is unavailable. */
+/* Permanent forest-dark theme. */
 :root {
-    --bg: #1f1e1d;
+    color-scheme: dark;
+    --bg: #18201b;
     --text: #f0eee6;
-    --text-secondary: #b0aea5;
-    --link-hover: #b0aea5;
-    --border: #5e5d59;
-    --card-bg: #3d3d3a;
-    /* The toggle keeps the same colours in both themes. */
-    --switch-track: #faf9f5;
-    --switch-knob: #1f1e1d;
-}
-
-[data-theme="light"] {
-    --bg: #f0eee6;
-    --text: #1f1e1d;
-    --text-secondary: #5e5d59;
-    --link-hover: #5e5d59;
-    --border: #d1cfc5;
-    --card-bg: #faf9f5;
+    --text-secondary: #a7b0a6;
+    --link: #bfd2b8;
+    --link-hover: #e0e9dc;
+    --border: #3c4a40;
+    --card-bg: #222c25;
+    --accent: #9fbb98;
+    --selection-bg: #405746;
+    --selection-text: #fbf8ee;
+    --focus-ring: #b6cdae;
+    --shadow: rgba(5, 12, 7, 0.35);
+    --backdrop: rgba(5, 12, 7, 0.55);
 }
 
 html {
@@ -43,6 +38,11 @@ body {
     color: var(--text);
     margin: 0;
     transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
 }
 
 p {
@@ -83,76 +83,21 @@ h1 {
 }
 
 a {
-    color: var(--text);
+    color: var(--link);
     text-decoration: underline;
     text-underline-offset: 0.1em;
     text-decoration-thickness: 0.08em;
     transition: color 0.2s linear;
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+}
+
 a:hover {
     color: var(--link-hover);
-}
-
-/* TABLE OF CONTENTS */
-
-/* Only shown when there is room left of the centered 620px column. */
-#toc {
-    display: none;
-    position: fixed;
-    top: clamp(32px, 8vh, 110px);
-    left: calc(50% - 530px);
-    width: 170px;
-    font-size: 0.8em;
-    line-height: 1.5;
-}
-
-@media (min-width: 1180px) {
-    #toc {
-        display: block;
-    }
-}
-
-.toc-label {
-    display: block;
-    font-size: 0.75em;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-    margin-bottom: 1em;
-}
-
-.toc-link {
-    position: relative;
-    display: block;
-    padding-left: 1.5em;
-    margin-bottom: 0.65em;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.2s linear;
-}
-
-.toc-link::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    transform: translateX(-6px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.toc-link:hover {
-    color: var(--text);
-}
-
-.toc-link.is-active {
-    color: var(--text);
-}
-
-.toc-link.is-active::before {
-    opacity: 1;
-    transform: none;
 }
 
 /* TYPEWRITER CARET */
@@ -174,7 +119,7 @@ a:hover {
 
 /* MOBILE TOP BAR + SECTION MENU */
 
-/* Hidden on wide viewports, where the contents rail handles navigation. */
+/* Compact section navigation for smaller viewports only. */
 #mobile-bar,
 #mobile-menu,
 #mobile-menu-backdrop {
@@ -244,7 +189,7 @@ a:hover {
         position: fixed;
         inset: 0;
         z-index: 210;
-        background: rgba(0, 0, 0, 0.45);
+        background: var(--backdrop);
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.25s ease, visibility 0.25s;
@@ -338,6 +283,7 @@ a:hover {
     vertical-align: baseline;
     text-decoration: underline;
     text-decoration-style: dotted;
+    text-decoration-color: var(--accent);
     text-underline-offset: 0.15em;
     text-decoration-thickness: 0.07em;
     transition: color 0.2s linear;
@@ -359,7 +305,7 @@ a:hover {
     color: var(--text);
     border: 1px solid var(--border);
     border-radius: 0.5rem;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 24px var(--shadow);
     font-size: 0.82em;
     line-height: 1.45;
     text-align: left;
@@ -392,7 +338,7 @@ a:hover {
 .glossary-link {
     display: inline-block;
     margin-top: 0.55em;
-    color: var(--text);
+    color: var(--link);
     text-decoration: underline;
     text-underline-offset: 0.12em;
     text-decoration-thickness: 0.06em;
@@ -431,53 +377,11 @@ h2 {
     content: "•";
     position: absolute;
     left: 0;
+    color: var(--accent);
 }
 
 .section-list li:not(:has(a)) {
     color: var(--text-secondary);
-}
-
-/* THEME TOGGLE */
-
-.toggle-switch {
-    position: relative;
-    width: 40px;
-    height: 20px;
-    flex-shrink: 0;
-}
-
-.toggle-checkbox {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    margin: 0;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.toggle-label {
-    position: absolute;
-    inset: 0;
-    background-color: var(--switch-track);
-    border: 1px solid var(--switch-knob);
-    border-radius: 2rem;
-    transition: background-color 0.2s linear, border-color 0.2s linear;
-}
-
-.toggle-label::before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background-color: var(--switch-knob);
-    transition: left 0.2s ease;
-}
-
-.toggle-checkbox:checked + .toggle-label::before {
-    left: 24px;
 }
 
 /* BLOG POST PAGES */

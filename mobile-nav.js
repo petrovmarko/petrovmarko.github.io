@@ -5,8 +5,7 @@
     const h1 = document.querySelector('h1');
     const fullName = ((h1 && (h1.getAttribute('aria-label') || h1.textContent)) || '').trim();
 
-    // Sections: "About" (top of page) plus every h2. toc.js has usually already
-    // assigned the heading ids; fall back to deriving them here just in case.
+    // Sections: "About" (top of page) plus every h2.
     const headings = Array.from(middle.querySelectorAll('h2'));
     const entries = [{ title: 'About', id: null }].concat(
         headings.map(function (h) {
