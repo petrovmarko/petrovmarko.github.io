@@ -9,7 +9,6 @@
 
     const name = document.createElement('span');
     name.id = 'mobile-name';
-    name.className = 'typewriter';
     name.textContent = fullName;
     bar.appendChild(name);
     document.body.appendChild(bar);
@@ -25,11 +24,6 @@
         shown = v;
         bar.classList.toggle('is-visible', v);
         bar.setAttribute('aria-hidden', v ? 'false' : 'true');
-        // Re-type the name each time the bar appears (only when actually visible,
-        // i.e. on phone-width viewports — skips wasted timers on desktop).
-        if (v && window.TypeWriter && getComputedStyle(bar).display !== 'none') {
-            window.TypeWriter.type(name, fullName, { speed: 48 });
-        }
     }
 
     function onScroll() {

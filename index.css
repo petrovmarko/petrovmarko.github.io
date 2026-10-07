@@ -7,14 +7,14 @@
     --text: #f0eee6;
     --text-secondary: var(--text);
     --link: var(--text);
-    --link-hover: #ffffff;
+    --link-hover: #e89b7f;
     --border: #3c4a40;
-    --card-bg: #222c25;
-    --accent: #9fbb98;
-    --selection-bg: #405746;
+    --card-bg: #101612;
+    --accent: #d97757;
+    --selection-bg: #6f3f31;
     --selection-text: #fbf8ee;
-    --focus-ring: #b6cdae;
-    --shadow: rgba(5, 12, 7, 0.35);
+    --focus-ring: #e89b7f;
+    --shadow: rgba(0, 0, 0, 0.7);
 }
 
 html {
@@ -81,6 +81,47 @@ h1 {
     margin-bottom: 1.3em;
 }
 
+/* Reveal each content block from left to right when the page loads. */
+#middle > * {
+    animation: text-reveal 720ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+#middle > :nth-child(1)  { animation-delay: 0ms; }
+#middle > :nth-child(2)  { animation-delay: 220ms; }
+#middle > :nth-child(3)  { animation-delay: 310ms; }
+#middle > :nth-child(4)  { animation-delay: 400ms; }
+#middle > :nth-child(5)  { animation-delay: 520ms; }
+#middle > :nth-child(6)  { animation-delay: 590ms; }
+#middle > :nth-child(7)  { animation-delay: 710ms; }
+#middle > :nth-child(8)  { animation-delay: 780ms; }
+#middle > :nth-child(9)  { animation-delay: 900ms; }
+#middle > :nth-child(10) { animation-delay: 970ms; }
+#middle > :nth-child(11) { animation-delay: 1090ms; }
+#middle > :nth-child(12) { animation-delay: 1160ms; }
+#middle > :nth-child(13) { animation-delay: 1280ms; }
+#middle > :nth-child(14) { animation-delay: 1350ms; }
+
+@keyframes text-reveal {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+        -webkit-clip-path: inset(0 100% 0 0);
+        clip-path: inset(0 100% 0 0);
+    }
+    99% {
+        opacity: 1;
+        transform: translateX(0);
+        -webkit-clip-path: inset(0 0 0 0);
+        clip-path: inset(0 0 0 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        -webkit-clip-path: none;
+        clip-path: none;
+    }
+}
+
 a {
     color: var(--link);
     text-decoration: underline;
@@ -97,23 +138,6 @@ button:focus-visible {
 
 a:hover {
     color: var(--link-hover);
-}
-
-/* TYPEWRITER CARET */
-
-.tw-cursor {
-    display: inline-block;
-    width: 0.08em;
-    height: 1.05em;
-    margin-left: 0.06em;
-    background: currentColor;
-    vertical-align: -0.15em;
-    animation: tw-blink 1s steps(1) infinite;
-}
-
-@keyframes tw-blink {
-    0%, 50% { opacity: 1; }
-    50.01%, 100% { opacity: 0; }
 }
 
 /* MOBILE TOP BAR */
@@ -155,15 +179,24 @@ a:hover {
         transition: none;
     }
 
-    .tw-cursor {
+    #middle > * {
         animation: none;
+        opacity: 1;
+        transform: none;
+        -webkit-clip-path: none;
+        clip-path: none;
     }
+
 }
 
 /* GLOSSARY POPOVERS */
 
 .glossary {
     position: relative;
+}
+
+.glossary.is-open {
+    z-index: 1000;
 }
 
 .glossary-term {
@@ -201,14 +234,15 @@ a:hover {
     color: var(--text);
     border: 1px solid var(--border);
     border-radius: 0.5rem;
-    box-shadow: 0 6px 24px var(--shadow);
+    box-shadow: 0 10px 36px var(--shadow);
     font-size: 0.82em;
     line-height: 1.45;
     text-align: left;
-    opacity: 0;
+    opacity: 1;
     visibility: hidden;
     transform: translateY(-4px);
-    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+    isolation: isolate;
+    transition: transform 0.15s ease, visibility 0.15s;
 }
 
 /* Invisible bridge so the gap above the card doesn't drop hover. */
@@ -222,7 +256,6 @@ a:hover {
 }
 
 .glossary.is-open .glossary-card {
-    opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
