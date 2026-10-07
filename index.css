@@ -209,45 +209,7 @@ h2::after {
     transform: scaleX(1);
 }
 
-/* MOBILE TOP BAR */
-
-/* Compact name bar for smaller viewports only. */
-#mobile-bar {
-    display: none;
-}
-
-@media (max-width: 1179px) {
-    #mobile-bar {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 230;
-        padding: 0.7em clamp(16px, 5vw, 32px);
-        background-color: var(--bg);
-        border-bottom: 1px solid var(--border);
-        transform: translateY(-100%);
-        transition: transform 0.28s ease;
-    }
-
-    #mobile-bar.is-visible {
-        transform: translateY(0);
-    }
-
-    #mobile-name {
-        font-weight: 600;
-        font-size: 1.1em;
-        white-space: nowrap;
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
-    #mobile-bar {
-        transition: none;
-    }
-
     #middle > * {
         animation: none;
         opacity: 1;
