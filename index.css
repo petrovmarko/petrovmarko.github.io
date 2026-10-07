@@ -199,12 +199,8 @@ h2::after {
 a:hover::after,
 a:focus-visible::after,
 .glossary-term:hover::after,
-.glossary-term:focus-visible::after {
-    opacity: 1;
-    transform: scaleX(1);
-}
-
-h2::after {
+.glossary-term:focus-visible::after,
+h2:hover::after {
     opacity: 1;
     transform: scaleX(1);
 }
