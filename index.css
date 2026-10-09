@@ -131,9 +131,6 @@ h1 {
 #middle > :nth-child(9)  { animation-delay: 900ms; }
 #middle > :nth-child(10) { animation-delay: 970ms; }
 #middle > :nth-child(11) { animation-delay: 1090ms; }
-#middle > :nth-child(12) { animation-delay: 1160ms; }
-#middle > :nth-child(13) { animation-delay: 1280ms; }
-#middle > :nth-child(14) { animation-delay: 1350ms; }
 
 @keyframes text-reveal {
     from {
@@ -353,6 +350,19 @@ h2 {
 
 .section-list li:not(:has(a)) {
     color: var(--text-secondary);
+}
+
+.education-entry {
+    display: grid;
+    gap: 0.18em;
+}
+
+.education-entry strong {
+    line-height: 1.35;
+}
+
+.education-entry span {
+    line-height: 1.45;
 }
 
 /* BLOG POST PAGES */
