@@ -19,9 +19,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css?v=20261025-2">
+    <link rel="stylesheet" href="index.css?v=20261025-3">
     <script src="glossary.js" defer></script>
     <script src="toc.js" defer></script>
+    <script src="summit.js" defer></script>
 </head>
 
 <body class="home-page" id="top">
@@ -143,28 +144,14 @@
             </article>
         </div>
 
-        <section class="summit-coda" aria-labelledby="summit-message">
+        <section class="summit-ending" aria-labelledby="summit-message">
             <div class="summit-message">
                 <span>End note</span>
                 <p id="summit-message">See you at the summit.</p>
             </div>
-            <svg class="summit-landscape" viewBox="0 0 1440 460" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Layered mountain ridges rising toward a summit">
-                <defs>
-                    <pattern id="summit-dots" width="9" height="9" patternUnits="userSpaceOnUse">
-                        <circle cx="2" cy="2" r="1.1"></circle>
-                    </pattern>
-                    <linearGradient id="summit-fade" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0" stop-color="#111713" stop-opacity="0"></stop>
-                        <stop offset="1" stop-color="#111713" stop-opacity="1"></stop>
-                    </linearGradient>
-                </defs>
-                <circle class="summit-sun" cx="1080" cy="90" r="35"></circle>
-                <path class="ridge ridge-back" d="M0 348 L128 300 L236 326 L370 238 L492 316 L635 210 L742 282 L875 166 L1015 292 L1145 225 L1262 298 L1440 244 L1440 460 L0 460 Z"></path>
-                <path class="ridge ridge-mid" d="M0 392 L145 340 L285 372 L444 295 L566 350 L714 274 L845 356 L1000 270 L1156 354 L1305 305 L1440 350 L1440 460 L0 460 Z"></path>
-                <path class="ridge-line" d="M0 348 L128 300 L236 326 L370 238 L492 316 L635 210 L742 282 L875 166 L1015 292 L1145 225 L1262 298 L1440 244"></path>
-                <path class="ridge ridge-front" d="M0 425 C170 360 275 402 426 356 C585 309 713 416 870 350 C1042 278 1167 403 1440 322 L1440 460 L0 460 Z"></path>
-                <path class="summit-fade" d="M0 330 H1440 V460 H0 Z"></path>
-            </svg>
+            <div class="summit-coda" aria-hidden="true">
+                <canvas></canvas>
+            </div>
         </section>
     </main>
 </body>
