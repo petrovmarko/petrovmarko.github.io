@@ -1,14 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111713">
     <title>Marko Petrov</title>
-
-    <meta charset="UTF-8">
     <meta name="description" content="Marko Petrov is a computer science student focused on machine learning research, Kaggle competitions, and competitive programming.">
     <meta name="author" content="Marko Petrov">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#18201b">
-
     <link rel="canonical" href="https://markopetrov.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Marko Petrov">
@@ -18,54 +16,132 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Marko Petrov">
     <meta name="twitter:description" content="Computer science student focused on machine learning research, Kaggle competitions, and competitive programming.">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css?v=20261010-1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css?v=20261025-1">
     <script src="glossary.js" defer></script>
+    <script src="toc.js" defer></script>
 </head>
 
-<body>
-    <div id="holder">
-        <div id="middle">
-            <div id="name-row">
-                <div class="name-lockup">
-                    <h1>Marko Petrov</h1>
-                    <svg class="name-underline" viewBox="0 0 180 16" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-                        <path d="M2 8 C17 4, 29 11, 45 8 S72 4, 90 8 S119 12, 139 7 C153 3, 166 4, 178 8" fill="none" stroke="#d97757" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
-                    </svg>
-                </div>
+<body class="home-page" id="top">
+    <main>
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-panel">
+                <p class="eyebrow">Computer Science · Machine Learning</p>
+                <h1 id="page-title">Marko Petrov</h1>
+                <p class="role">BSc. Computer Science · Skopje, North Macedonia</p>
+                <p class="hero-bio">I work on competitive machine learning, with a focus on validation, feature engineering, and building reliable end-to-end systems.</p>
+                <p class="interests">Interests: machine learning research · computer vision · algorithms</p>
+                <nav class="profile-links" aria-label="Profile links">
+                    <a href="mailto:petrovmarko10119@gmail.com">Email</a><span aria-hidden="true">·</span>
+                    <a href="https://github.com/petrovmarko">GitHub</a><span aria-hidden="true">·</span>
+                    <a href="https://www.kaggle.com/petrovmarko">Kaggle</a><span aria-hidden="true">·</span>
+                    <a href="https://mk.linkedin.com/in/marko-petrov-926637332">LinkedIn</a><span aria-hidden="true">·</span>
+                    <a href="https://x.com/marcepetrov">X</a><span aria-hidden="true">·</span>
+                    <a href="https://substack.com/@buysider">Substack</a>
+                </nav>
+                <p class="hero-note">Currently working toward Kaggle Competitions Master.</p>
             </div>
-            <p>I'm a third-year computer science student at <span class="glossary"><button type="button" class="glossary-term" data-def="The Faculty of Computer Science and Engineering at Ss. Cyril and Methodius University in Skopje, North Macedonia." data-link="https://finki.ukim.mk" data-link-label="Visit FINKI">FINKI</button></span>, focused on ML research and competitive machine learning. I'm working toward <span class="glossary"><button type="button" class="glossary-term" data-def="An online platform for machine-learning competitions, datasets, and community notebooks, where data scientists compete to build the most accurate models." data-link="https://www.kaggle.com/petrovmarko" data-link-label="View my Kaggle profile">Kaggle</button></span> Competitions Master (one silver medal) and also enjoy <span class="glossary"><button type="button" class="glossary-term" data-def="Timed contests centered on algorithms, data structures, and efficient problem solving." data-link="https://stats.ioinformatics.org/people/8101" data-link-label="My IOI profile">competitive programming</button></span>.</p>
-            <p>Connect: <a href="https://github.com/petrovmarko">GitHub</a>, <a href="https://x.com/marcepetrov">X</a>, <a href="https://substack.com/@buysider">Substack</a>, <a href="https://mk.linkedin.com/in/marko-petrov-926637332">LinkedIn</a>, or <a href="mailto:petrovmarko10119@gmail.com">email</a>.</p>
 
-            <h2>Education</h2>
-            <ul class="section-list">
-                <li class="education-entry">
-                    <strong>Faculty of Computer Science and Engineering — Skopje</strong>
-                    <span>BSc. Computer Science (2024–2028, expected)</span>
-                    <span>GPA: 9.62/10 · Dean’s List · Full scholarship for competitive-programming achievements</span>
-                </li>
-            </ul>
+            <figure class="hero-figure">
+                <div class="figure-mat">
+                    <img src="pfp.webp" width="300" height="300" alt="Monochrome illustration of two cows in a mountain landscape at sunset">
+                </div>
+                <figcaption><strong>Figure 1.</strong> Perspective, persistence, and the long view.</figcaption>
+            </figure>
+        </section>
 
-            <h2>Kaggle Competitions</h2>
-            <p>Kaggle is the world’s largest machine-learning community, with more than 25 million registered members. Its hidden-test competitions attract top practitioners; each project below represents roughly two months of focused work.</p>
-            <ul class="section-list">
-                <li><strong>Basketball Tournament Prediction (Silver Medal).</strong> Built an ensemble for Kaggle’s NCAA March Madness competition, using season-level features and out-of-fold validation across held-out seasons to predict matchup point differentials. Calibrated margins into win probabilities with spline interpolation and optimized for Brier score. Strong validation and feature engineering drove the largest gains. Finished in the top 2% of approximately 3,600 competitors.</li>
-                <li><strong>3D Cell Tracking During Zebrafish Development.</strong> Built an end-to-end pipeline for anisotropic 3D time-lapse microscopy: cell-center detection, temporal matching, division prediction, and lineage reconstruction. Combined learned modeling with tuned post-processing in a reproducible inference notebook. In my first deep-learning competition, I finished in the top 12% on the private leaderboard among approximately 4,000 competitors; the leaderboard drop cost a medal and reinforced the importance of robust validation.</li>
-            </ul>
+        <div class="paper-layout">
+            <nav class="section-index" aria-label="Page contents">
+                <p class="index-label">Index</p>
+                <ol>
+                    <li><a href="#abstract" data-section="abstract"><span>00</span>Abstract</a></li>
+                    <li><a href="#education" data-section="education"><span>01</span>Education</a></li>
+                    <li><a href="#kaggle" data-section="kaggle"><span>02</span>Kaggle</a></li>
+                    <li><a href="#competitive-programming" data-section="competitive-programming"><span>03</span>Competitive Programming</a></li>
+                </ol>
+            </nav>
 
-            <h2>Competitive Programming</h2>
-            <p>Competitive programming is algorithmic problem-solving under strict time and memory limits, emphasizing precise reasoning, data structures, and efficient implementation.</p>
-            <ul class="section-list">
-                <li><strong>International Olympiad in Informatics 2023 — Honourable Mention.</strong> The IOI is one of five international science olympiads; countries typically send four students to compete individually over two days. Represented North Macedonia at the 35th IOI in Szeged, Hungary, earning an Honourable Mention after only one year of competitive-programming experience.</li>
-                <li><strong>Balkan Olympiad in Informatics.</strong> Competed in the regional olympiad.</li>
-                <li><strong>Macedonian Olympiad in Informatics — 2nd Place Overall.</strong></li>
-            </ul>
+            <article class="paper-body">
+                <section class="abstract" id="abstract" aria-labelledby="abstract-title">
+                    <h2 id="abstract-title">Abstract</h2>
+                    <p>I am a third-year student at <span class="glossary"><button type="button" class="glossary-term" data-def="The Faculty of Computer Science and Engineering at Ss. Cyril and Methodius University in Skopje, North Macedonia." data-link="https://finki.ukim.mk" data-link-label="Visit FINKI">FINKI</button></span>, focused on machine learning research and competitive ML.</p>
+                    <p>My work spans tabular forecasting, 3D computer vision, and algorithmic problem-solving. I care most about sound validation, predictive features, and systems that hold up beyond a public leaderboard.</p>
+                </section>
+
+                <section class="paper-section" id="education" aria-labelledby="education-title">
+                    <h2 id="education-title"><span class="section-number">1</span>Education</h2>
+                    <div class="education-table" role="group" aria-label="Education">
+                        <div class="table-head" aria-hidden="true">
+                            <span>Institution</span><span>Degree</span><span>Years</span>
+                        </div>
+                        <div class="education-row">
+                            <div>
+                                <h3>Faculty of Computer Science and Engineering</h3>
+                                <p>Ss. Cyril and Methodius University · Skopje</p>
+                            </div>
+                            <p>BSc. Computer Science</p>
+                            <p class="years">2024–2028<br><span>expected</span></p>
+                        </div>
+                        <p class="education-note">GPA 9.62/10 · Dean’s List · Full scholarship for competitive-programming achievements</p>
+                    </div>
+                </section>
+
+                <section class="paper-section" id="kaggle" aria-labelledby="kaggle-title">
+                    <h2 id="kaggle-title"><span class="section-number">2</span>Kaggle Competitions</h2>
+                    <p><span class="glossary"><button type="button" class="glossary-term" data-def="An online platform for machine-learning competitions, datasets, and community notebooks, where data scientists compete to build the most accurate models." data-link="https://www.kaggle.com/petrovmarko" data-link-label="View my Kaggle profile">Kaggle</button></span> is the world’s largest machine-learning community, with more than 25 million registered members. Its hidden-test competitions attract top practitioners; each project below represents roughly two months of focused work.</p>
+                    <ol class="project-list">
+                        <li>
+                            <span class="project-number">[1]</span>
+                            <div class="project-body">
+                                <div class="project-heading">
+                                    <h3>Basketball Tournament Prediction</h3>
+                                    <span class="project-tag">Silver Medal · Top 2%</span>
+                                </div>
+                                <p>Built an ensemble for Kaggle’s NCAA March Madness competition, using season-level features and out-of-fold validation across held-out seasons to predict matchup point differentials. Calibrated margins into win probabilities with spline interpolation and optimized for Brier score.</p>
+                                <p class="project-footnote">Strong validation and feature engineering drove the largest gains · approximately 3,600 competitors</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="project-number">[2]</span>
+                            <div class="project-body">
+                                <div class="project-heading">
+                                    <h3>3D Cell Tracking During Zebrafish Development</h3>
+                                    <span class="project-tag">Top 12%</span>
+                                </div>
+                                <p>Built an end-to-end pipeline for anisotropic 3D time-lapse microscopy: cell-center detection, temporal matching, division prediction, and lineage reconstruction. Combined learned modeling with tuned post-processing in a reproducible inference notebook.</p>
+                                <p class="project-footnote">First deep-learning competition · approximately 4,000 competitors</p>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="paper-section" id="competitive-programming" aria-labelledby="competitive-programming-title">
+                    <h2 id="competitive-programming-title"><span class="section-number">3</span>Competitive Programming</h2>
+                    <p><span class="glossary"><button type="button" class="glossary-term" data-def="Timed contests centered on algorithms, data structures, and efficient problem solving." data-link="https://stats.ioinformatics.org/people/8101" data-link-label="View my IOI profile">Competitive programming</button></span> is algorithmic problem-solving under strict time and memory limits, emphasizing precise reasoning, data structures, and efficient implementation.</p>
+                    <ol class="achievement-list">
+                        <li>
+                            <span class="achievement-year">2023</span>
+                            <div><h3>International Olympiad in Informatics</h3><p><strong>Honourable Mention.</strong> Represented North Macedonia at the 35th IOI in Szeged, Hungary, after only one year of competitive-programming experience. The IOI is one of five international science olympiads; countries typically send four students to compete individually over two days.</p></div>
+                        </li>
+                        <li>
+                            <span class="achievement-year">BOI</span>
+                            <div><h3>Balkan Olympiad in Informatics</h3><p>Competed for North Macedonia at the regional olympiad.</p></div>
+                        </li>
+                        <li>
+                            <span class="achievement-year">MOI</span>
+                            <div><h3>Macedonian Olympiad in Informatics</h3><p><strong>2nd place overall.</strong></p></div>
+                        </li>
+                    </ol>
+                </section>
+
+                <footer class="site-footer">
+                    <p>Marko Petrov · Skopje, North Macedonia</p>
+                    <a href="#top">Back to top ↑</a>
+                </footer>
+            </article>
         </div>
-    </div>
-
-
+    </main>
 </body>
 </html>
