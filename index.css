@@ -10,12 +10,38 @@
     --accent-ink: #4c6155;
     --accent-soft: rgba(110, 131, 120, 0.16);
     --hill-ink: #6e8378;
+    --summit-accent: #c9633f;
     --mat: #fcfcfa;
+    --popover: #fdfdfb;
+    --selection-ink: #141713;
+    --frame-border: rgba(28, 40, 34, 0.1);
+    --image-border: rgba(17, 23, 19, 0.65);
     --shadow: rgba(30, 44, 36, 0.3);
     --edge: clamp(24px, 5vw, 76px);
     --index-width: clamp(210px, 22vw, 330px);
     --display: "Newsreader", Georgia, serif;
     --sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0c1712;
+    --surface: #14231b;
+    --ink: #f3f1e9;
+    --ink-2: #d3dbd5;
+    --muted: #9eaaa3;
+    --rule: #3a4a40;
+    --accent: #91a99a;
+    --accent-ink: #bdcbbf;
+    --accent-soft: rgba(145, 169, 154, 0.15);
+    --hill-ink: #8fa797;
+    --summit-accent: #e17a53;
+    --mat: #132019;
+    --popover: #14231b;
+    --selection-ink: #0c1712;
+    --frame-border: rgba(226, 235, 228, 0.13);
+    --image-border: rgba(226, 235, 228, 0.42);
+    --shadow: rgba(0, 0, 0, 0.48);
 }
 
 * {
@@ -36,11 +62,12 @@ body {
     font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    transition: background 180ms ease, color 180ms ease;
 }
 
 ::selection {
     background: var(--accent);
-    color: #141713;
+    color: var(--selection-ink);
 }
 
 a {
@@ -155,20 +182,48 @@ button {
     font-style: italic;
 }
 
+.theme-switch {
+    display: flex;
+    gap: 15px;
+    margin-top: 17px;
+}
+
+.theme-switch button {
+    padding: 2px 0;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    font: 500 11px/1.4 var(--sans);
+    cursor: pointer;
+    transition: border-color 160ms ease, color 160ms ease;
+}
+
+.theme-switch button:hover,
+.theme-switch button[aria-pressed="true"] {
+    border-bottom-color: currentColor;
+    color: var(--ink);
+}
+
 .hero-figure {
+    align-self: center;
+    justify-self: center;
+    width: min(100%, 560px);
     min-width: 0;
     margin: 0;
     display: grid;
-    grid-template-rows: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
 }
 
 .figure-mat {
+    position: relative;
+    aspect-ratio: 1 / 1;
     min-height: 0;
     display: grid;
     place-items: center;
     padding: clamp(14px, 2vw, 24px);
     background: var(--mat);
-    box-shadow: 0 0 0 1px rgba(28, 40, 34, 0.1), 0 34px 54px -30px var(--shadow);
+    box-shadow: 0 0 0 1px var(--frame-border), 0 34px 54px -30px var(--shadow);
 }
 
 .figure-mat img {
@@ -177,11 +232,14 @@ button {
     height: 100%;
     min-height: 0;
     object-fit: cover;
-    filter: sepia(0.12) contrast(1.04);
-    box-shadow: 0 0 0 1px rgba(17, 23, 19, 0.65);
+    box-shadow: 0 0 0 1px var(--image-border);
 }
 
 .hero-figure figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
     padding-top: 18px;
     color: var(--ink-2);
     font-size: 12px;
@@ -191,6 +249,52 @@ button {
 .hero-figure figcaption strong {
     color: var(--ink);
     font-weight: 600;
+}
+
+.image-view-cycle {
+    min-width: 142px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    flex: 0 0 auto;
+    padding: 6px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 0;
+    background: transparent;
+    color: var(--muted);
+    font: 600 10px/1.2 var(--sans);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.image-view-cycle:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+}
+
+.image-view-cycle kbd {
+    min-width: 17px;
+    padding-right: 8px;
+    border-right: 1px solid var(--rule);
+    color: var(--accent-ink);
+    font: inherit;
+    text-align: center;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Paper-like reading room */
@@ -553,7 +657,7 @@ button {
     padding: 13px 15px;
     border: 1px solid var(--rule);
     border-radius: 4px;
-    background: #fdfdfb;
+    background: var(--popover);
     box-shadow: 0 18px 42px var(--shadow);
     color: var(--ink-2);
     font-size: 12px;
@@ -655,8 +759,9 @@ body:not(.home-page) h1 {
     }
 
     .hero-figure {
-        min-height: min(76svh, 700px);
-        padding: 0 var(--edge);
+        width: min(84vw, 520px);
+        min-height: 0;
+        padding: 0;
     }
 
     .figure-mat {
@@ -704,8 +809,9 @@ body:not(.home-page) h1 {
     }
 
     .hero-figure {
+        width: min(82vw, 320px);
         min-height: auto;
-        padding: 0 10px;
+        padding: 0;
     }
 
     .figure-mat {
@@ -714,7 +820,14 @@ body:not(.home-page) h1 {
     }
 
     .hero-figure figcaption {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
         padding: 14px 10px 0;
+    }
+
+    .image-view-cycle {
+        min-width: 138px;
     }
 
     .paper-body {
@@ -779,7 +892,7 @@ body:not(.home-page) h1 {
     }
 }
 
-/* Closing halftone hills, drawn as the ending approaches. */
+/* Closing landscape, sketched stroke by stroke as the ending approaches. */
 .summit-ending {
     margin-top: 24px;
     padding-top: clamp(74px, 9vw, 118px);
@@ -810,6 +923,32 @@ body:not(.home-page) h1 {
     line-height: 1;
 }
 
+.sketch-card {
+    position: relative;
+    width: min(calc(100% - (2 * var(--edge))), 780px);
+    height: auto;
+    aspect-ratio: 768 / 292;
+    margin: 0 auto clamp(42px, 6vw, 76px);
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: #fff;
+    pointer-events: none;
+}
+
+.sketch-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+:root[data-theme="dark"] .sketch-card img {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+:root[data-theme="dark"] .sketch-card {
+    background: #000;
+}
+
 .summit-coda {
     position: relative;
     height: clamp(150px, 15vw, 230px);
@@ -838,6 +977,11 @@ body:not(.home-page) h1 {
         margin-bottom: 42px;
     }
 
+    .sketch-card {
+        width: calc(100% - 32px);
+        margin-bottom: 52px;
+    }
+
     .summit-coda {
         height: 180px;
     }
@@ -856,6 +1000,7 @@ body:not(.home-page) h1 {
         transition-duration: 0.01ms !important;
     }
 
+    .sketch-card canvas,
     .summit-coda canvas {
         transition: none;
     }

@@ -19,10 +19,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css?v=20261025-4">
+    <script src="theme.js"></script>
+    <link rel="stylesheet" href="index.css?v=20261027-7">
     <script src="glossary.js" defer></script>
     <script src="toc.js" defer></script>
-    <script src="summit.js" defer></script>
+    <script src="footer-hills.js?v=20261027-1" defer></script>
+    <script src="image-view.js?v=20261027-4" defer></script>
 </head>
 
 <body class="home-page" id="top">
@@ -43,13 +45,24 @@
                     <a href="https://substack.com/@buysider">Substack</a>
                 </nav>
                 <p class="hero-note">Currently working toward Kaggle Competitions Master.</p>
+                <div class="theme-switch" role="group" aria-label="Color theme">
+                    <button type="button" data-theme-option="light" aria-pressed="true">Light</button>
+                    <button type="button" data-theme-option="dark" aria-pressed="false">Dark</button>
+                </div>
             </div>
 
             <figure class="hero-figure">
                 <div class="figure-mat">
-                    <img src="pfp.webp" width="300" height="300" alt="Monochrome illustration of two cows in a mountain landscape at sunset">
+                    <img src="pfp-original-hires.webp" width="1254" height="1254" data-cow-image alt="Monochrome engraved illustration of a cow overlooking a mountain lake at sunset">
                 </div>
-                <figcaption><strong>Figure 1.</strong> Perspective, persistence, and the long view.</figcaption>
+                <figcaption>
+                    <span><strong>Figure 1.</strong> Perspective, persistence, and the long view.</span>
+                    <button class="image-view-cycle" type="button" data-cow-view aria-label="View: Original. Next: Edges" title="Next: Edges (S)">
+                        <kbd>S</kbd>
+                        <span data-next-view>Edges</span>
+                    </button>
+                    <span class="sr-only" data-view-status aria-live="polite">Current view: Original</span>
+                </figcaption>
             </figure>
         </section>
 
@@ -148,6 +161,9 @@
             <div class="summit-message">
                 <span>End note</span>
                 <p id="summit-message">See you at the summit.</p>
+            </div>
+            <div class="sketch-card" aria-hidden="true">
+                <img src="summit-sketch-simple.webp" width="2022" height="778" alt="">
             </div>
             <div class="summit-coda" aria-hidden="true">
                 <canvas></canvas>
